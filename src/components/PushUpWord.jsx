@@ -25,7 +25,6 @@ const PushUpWord = ({ word }) => {
     const letterIn = letterOut.cloneNode(true);
     letterIn.style.position = 'absolute';
     letterIn.style.pointerEvents = 'none';
-    letterIn.style.userSelect = 'none';
     letterOut.style.position = 'relative';
     letterOut.style.overflow = 'hidden';
     
@@ -61,7 +60,7 @@ const PushUpWord = ({ word }) => {
   return (
     <div className="nav-item" style={{ overflow: 'hidden' }}>
       {letters.map((letterObj, i) => (
-        <span key={i} ref={letterObj.ref} className="letter" style={{ position: 'relative', marginBottom: '-2px', marginTop: '-2px' }}>
+        <span key={i} ref={letterObj.ref} className="letter" style={{userSelect: 'none'}}>
           {letterObj.char}
         </span>
       ))}
