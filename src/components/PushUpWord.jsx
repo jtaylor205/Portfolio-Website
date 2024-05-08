@@ -15,11 +15,10 @@ const PushUpWord = ({ word }) => {
 
   useEffect(() => {
     if (letters.length === 0) return;
-
     const timelines = letters.map((letterObj, index) => {
     const letterOut = letterObj.ref.current;
     const timeline = gsap.timeline({ paused: true });
-    const direction = index % 2 === 0 ? -20 : 20;
+    const direction = index % 2 === 0 ? -22 : 22;
 
     // Clone the letter
     const letterIn = letterOut.cloneNode(true);

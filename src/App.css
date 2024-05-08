@@ -1,5 +1,5 @@
 .App-header {
-  background-color: #282c34;
+  background-color: #000000;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -14,8 +14,9 @@
   top: 0;
   left: 0;
   display: flex;
-  justify-content: space-between; /* This will put space between the main children */
-  align-items: flex-start; /* Align items to the top */
+  justify-content: space-between; 
+  align-items: flex-start; 
+  width: 100%;
 }
 .nav-name-container {
   flex-grow: 1;
@@ -33,7 +34,7 @@
 .nav-name {
   color: #c9c9c9; 
   font-size: 100px;
-  font-family: 'Arial', sans-serif; 
+  font-family: "Zeyada", cursive;
   line-height: 0.8;
   letter-spacing: 1px; 
   margin-right: 35vw;
@@ -41,11 +42,10 @@
 
 .nav-item {
   white-space: nowrap;
-  
   color: #c9c9c9;
-  font-size: 15px;
+  font-size: 1vw;
   font-family: 'Arial', sans-serif;
-  margin-right: 5vw;
+  margin-left: 3vw;
   position: relative; 
   display: inline-block;
 }
@@ -54,32 +54,97 @@
   display: inline-block;
   position: absolute; 
   color: #c9c9c9;
-  font-size: 15px;
+  font-size: 1vw;
   font-family: 'Arial', sans-serif;
 }
 
 .nav-list {
-  display: flex; 
-  flex-direction: row; 
-  align-items: center; 
-  justify-content: flex-start;
-  flex-grow: 1;
-  margin: 10px; 
-  font-weight: bold;
-  
+  display: none;
 }
 
 .link-logo {
   padding-top: 2vw;
   width: 2vw;
   height: 2vw; 
-  margin-right: 3vw;
 }
 
 .link-item {
   margin-bottom: 1.8vw;
+  background-color: #c9c9c9;
+  border-radius: 4px;
+  padding: 4px; 
+  display: inline-block;
+  margin-right: 3vw;
 }
 
+/* Hamburger icon css */
+
+.hamburger {
+  cursor: pointer;
+  width: 4vw; 
+  height: 4vw; 
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-around;
+  padding-right: 4vw;
+  padding-top: 4vw;
+}
+
+.hamburger span {
+  display: block;
+  height: 0.1vw;
+  width: 100%;
+  background: #c9c9c9;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.hamburger:not(.open):hover span:nth-child(1) {
+  transform: translateY(-5px);
+}
+
+.hamburger:not(.open):hover span:nth-child(2) {
+  transform: translateY(0px);
+}
+
+.hamburger:not(.open):hover span:nth-child(3) {
+  transform: translateY(5px);
+}
+
+@media (min-width: 767px){
+  .nav-list {
+    display: flex; 
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: flex-start;
+    flex-grow: 1;
+    margin: 1vw; 
+    padding-left: 30vw;
+    font-weight: bold;
+  }
+
+  .hamburger {
+    cursor: pointer;
+    width: 1.5vw; 
+    height: 1.5vw; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-around;
+    padding-right: 1vw;
+    padding-top: 1vw;
+  }
+};
 
 
 
