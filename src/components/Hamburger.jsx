@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Hamburger = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
+const Hamburger = ({ menuOpen, setMenuOpen, className = '' }) => {
   return (
-    <div className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
+    <div className={`hamburger ${menuOpen ? 'open' : ''} ${className}`} onClick={() => setMenuOpen(!menuOpen)}>
       <span></span>
       <span></span>
       <span></span>
