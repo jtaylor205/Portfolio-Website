@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PushUpWord from './PushUpWord';
 
 const SlideoverNav = ({ menuOpen, setMenuOpen }) => {
   const [navHoverIndex, setNavHoverIndex] = useState(-1);
@@ -9,6 +10,7 @@ const SlideoverNav = ({ menuOpen, setMenuOpen }) => {
   const handleLinkMouseEnter = (index) => setLinkHoverIndex(index);
   const handleLinkMouseLeave = () => setLinkHoverIndex(-1);
 
+  
 
   const navItems = [
     { title: "HOME" },
@@ -17,9 +19,9 @@ const SlideoverNav = ({ menuOpen, setMenuOpen }) => {
   ];
 
   const linkItems = [
-    {title: "LINKEDIN", link: 'https://www.linkedin.com/in/jaedon-taylor-982316102/'},
-    {title: "GITHUB", link: 'https://github.com/jtaylor205'},
-    {title: "RESUME"},
+    { title: "LINKEDIN", link: 'https://www.linkedin.com/in/jaedon-taylor-982316102/' },
+    { title: "GITHUB", link: 'https://github.com/jtaylor205' },
+    { title: "RESUME" },
   ];
 
   return (
@@ -27,12 +29,8 @@ const SlideoverNav = ({ menuOpen, setMenuOpen }) => {
       <div className="slideover-tabs-container">
         {navItems.map((item, index) => (
           <div key={index}>
-            <div
-              className={`slideover-tab ${navHoverIndex === index ? 'hover' : ''} ${index === 0 && navHoverIndex === 0 ? 'first-hover' : ''}`}
-              onMouseEnter={() => handleNavMouseEnter(index)}
-              onMouseLeave={handleNavMouseLeave}
-            >
-              {item.title}
+            <div>
+              <PushUpWord word={item.title} alternate={false} wordClass={'slideover-tab'} letterClass={'slideover-letter'}/>
             </div>
           </div>
         ))}

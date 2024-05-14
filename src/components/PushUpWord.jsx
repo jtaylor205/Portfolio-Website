@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { PiX } from 'react-icons/pi';
 
-const PushUpWord = ({ word }) => {
+const PushUpWord = ({ word, alternate, wordClass, letterClass}) => {
   const [letters, setLetters] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const PushUpWord = ({ word }) => {
     const timelines = letters.map((letterObj, index) => {
     const letterOut = letterObj.ref.current;
     const timeline = gsap.timeline({ paused: true });
-    const direction = index % 2 === 0 ? -22 : 22;
+    const direction = alternate ? (index % 2 === 0 ? -22 : 22) : -130;
 
     // Clone the letter
     const letterIn = letterOut.cloneNode(true);
@@ -36,14 +36,13 @@ const PushUpWord = ({ word }) => {
     letterOut.parentNode.style.position = 'relative';
     letterOut.parentNode.appendChild(letterIn);
 
-    // Set up the animation timeline for this letter
-    timeline.to(letterOut, { y: direction, duration: 0.5 })
+    // Set up the animation timeline for letter based on if alternating
+    timeline.to(letterOut, { y: direction, duration: alternate ? 0.5 : 0.2 })
             .fromTo(letterIn, { y: -direction}, { y: 0, duration: 0.5 }, 0);
 
     return timeline;
 });
   
-    // Assuming there's a parent element to attach the event listeners
     const parentElement = letters[0].ref.current.parentNode;
     parentElement.onmouseenter = () => {
         
@@ -52,14 +51,12 @@ const PushUpWord = ({ word }) => {
         timeline.play();
       })
     };
-    
-  
   }, [letters]);
   
   return (
-    <div className="nav-item" style={{ overflow: 'hidden' }}>
+    <div className={wordClass} style={{ overflow: 'hidden' }}>
       {letters.map((letterObj, i) => (
-        <span key={i} ref={letterObj.ref} className="letter" style={{userSelect: 'none'}}>
+        <span key={i} ref={letterObj.ref} className={letterClass} style={{userSelect: 'none'}}>
           {letterObj.char}
         </span>
       ))}

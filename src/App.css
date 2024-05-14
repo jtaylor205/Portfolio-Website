@@ -164,45 +164,23 @@
 .slideover-tabs-container {
   position: flex;
   flex-direction: column;
-  
+  margin-top: 2vw;
 }
 
 .slideover-tab {
   padding-left: 1vw;
   color: black;
   font-family: 'Arial', sans-serif;
-  padding-top: 4vw;
-  font-size: 5vw;
+  padding-top: 1vw;
   position: relative; 
   overflow: hidden; 
-  transition: color 0.3s ease; 
-  height: 70%;
 }
 
-.slideover-tab::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 0%; 
-  background: #353434;
-  transition: height 0.3s ease, background-color 0.3s ease; 
-  z-index: -1;
-}
-
-.slideover-tab.hover::before {
-  height: 100%;
-  color: #c9c9c9; 
-}
-
-.slideover-tab.hover {
-  color: #c9c9c9;
-}
-
-.slideover-tab.first-hover {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+.slideover-letter {
+  display: inline-block;
+  color: #000000;
+  font-size: 6vw;
+  font-family: 'Arial', sans-serif;
 }
 
 .slideover-links-container {
@@ -216,13 +194,14 @@
 }
 
 .slideover-link {
+  position: relative;
   margin-left: 1vw;
   height: 70%;
   padding: 1vw;
   color: black;
   font-family: 'Arial', sans-serif;
   font-size: 1vw;
-  transition: color 0.3s ease, background-color 0.3s ease; 
+  transition: color 0.3s ease; 
   cursor: pointer; 
   display: flex;
   align-items: center; 
@@ -231,13 +210,30 @@
   border-radius: 50px; 
   text-decoration: none; 
   box-sizing: border-box; 
+  overflow: hidden;
 }
 
+.slideover-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0; 
+  background: #353434;
+  transition: height 0.3s ease; 
+  z-index: -1;
+}
+
+.slideover-link.hover::before {
+  height: 100%;
+}
 
 .slideover-link.hover {
-  color: #c9c9c9;
-  background-color: #353434; /* Dark background on hover */
+  color: #c9c9c9; 
 }
+
+
 
 @media (max-width: 767px){
   .nav-list {

@@ -1,16 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PushUpWord from './PushUpWord';
 import Hamburger from './Hamburger';
 import SlideoverNav from './SlideoverNav';
 
 const NavBar = () => {
-  const [menuOpen, setMenuOpen] = useState(false); 
+  const [menuOpen, setMenuOpen] = useState(false);
+  const slideoverNavRef = useRef(null);
 
   const navItems = [
     { title: "HOME" },
     { title: "ABOUT" },
     { title: "PROJECTS" },
   ];
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (slideoverNavRef.current && !slideoverNavRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className={'nav-container'}>
@@ -20,12 +34,14 @@ const NavBar = () => {
       <div className="nav-list">
         {navItems.map((item, index) => (
           <div key={index}>
-            <PushUpWord word={item.title} />
+            <PushUpWord word={item.title} alternate={true} wordClass={'nav-item'} letterClass={'letter'} />
           </div>
         ))}
       </div>
       <Hamburger menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <SlideoverNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <div ref={slideoverNavRef}>
+        <SlideoverNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      </div>
     </div>
   );
 };
