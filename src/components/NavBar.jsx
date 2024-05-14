@@ -6,6 +6,7 @@ import SlideoverNav from './SlideoverNav';
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const slideoverNavRef = useRef(null);
+  const hamburgerRef = useRef(null);
 
   const navItems = [
     { title: "HOME" },
@@ -15,7 +16,12 @@ const NavBar = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (slideoverNavRef.current && !slideoverNavRef.current.contains(event.target)) {
+      if (
+        slideoverNavRef.current &&
+        !slideoverNavRef.current.contains(event.target) &&
+        hamburgerRef.current &&
+        !hamburgerRef.current.contains(event.target)
+      ) {
         setMenuOpen(false);
       }
     };
@@ -38,7 +44,9 @@ const NavBar = () => {
           </div>
         ))}
       </div>
-      <Hamburger menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <div ref={hamburgerRef}>
+        <Hamburger menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      </div>
       <div ref={slideoverNavRef}>
         <SlideoverNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       </div>
