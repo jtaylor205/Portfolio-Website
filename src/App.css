@@ -32,6 +32,7 @@
   font-family: "Zeyada", cursive;
   letter-spacing: 1px; 
   margin-right: 35vw;
+  text-decoration: none;
 }
 
 .nav-item {
@@ -248,6 +249,30 @@
 };
 
 
+/* Transition css */
+.slide-in {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  transform-origin: bottom;
+}
 
+.slide-rect {
+  overflow: hidden;
+}
+
+
+.slide-out {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  transform-origin: top;
+}
 /* You might need to adjust the font-size and spacing based on your specific needs */
 
