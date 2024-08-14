@@ -37,7 +37,7 @@ const PushUpWord = ({ word, alternate, wordClass, letterClass}) => {
     letterOut.parentNode.appendChild(letterIn);
 
     // Set up the animation timeline for letter based on if alternating
-    timeline.to(letterOut, { y: direction, duration: alternate ? 0.5 : 0.2 })
+    timeline.to(letterOut, { y: direction, duration: alternate ? 0.5 : 0.3 })
             .fromTo(letterIn, { y: -direction}, { y: 0, duration: 0.5 }, 0);
 
     return timeline;

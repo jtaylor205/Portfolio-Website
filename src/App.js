@@ -17,7 +17,7 @@ function App() {
       <header className="App-header">
         <div>
           <NavBar/>
-          <AnimatePresence mode="wait">
+          <AnimatePresence>
           <Routes location={location} key={location.pathname}>
             <Route index element={<Home />}/>
             <Route path="/About" element={<About />} />
