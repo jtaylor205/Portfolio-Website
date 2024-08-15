@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import PushUpWord from './PushUpWord';
 import Hamburger from './Hamburger';
 import SlideoverNav from './SlideoverNav';
@@ -13,6 +13,7 @@ const NavBar = () => {
   const slideoverNavRef = useRef(null);
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   const navItems = [
     { title: "HOME", to: "/" },
@@ -21,7 +22,9 @@ const NavBar = () => {
   ];
 
   useEffect(() => {
+    
     const handleClickOutside = (event) => {
+      // Closes menu if click is outside of hamburger / slideoverNav
       if (
         slideoverNavRef.current &&
         !slideoverNavRef.current.contains(event.target) &&
@@ -39,9 +42,14 @@ const NavBar = () => {
   }, []);
 
   const handleNavClick = (to) => {
-    // Set a flag in sessionStorage to indicate the navigation event
-    sessionStorage.setItem('navigate', 'true');
-    navigate(to);
+    if (location.pathname === to) {
+      // If the user is already on the current route, refresh the page
+      window.location.reload();
+    } else {
+      // Otherwise, navigate to the new route
+      sessionStorage.setItem('navigate', 'true');
+      navigate(to);
+    }
   };
 
   return (
@@ -55,6 +63,7 @@ const NavBar = () => {
       </div>
       <div className="nav-list">
         {navItems.map((item, index) => (
+          //For each item in navItems, creates a spot on navbar with alternating PushUpWord
           <div key={index} onClick={() => handleNavClick(item.to)}>
             <Link className="nav-link" to={item.to}>
               <PushUpWord
@@ -67,6 +76,7 @@ const NavBar = () => {
           </div>
         ))}
       </div>
+        
       <div ref={hamburgerRef}>
         <Hamburger menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       </div>

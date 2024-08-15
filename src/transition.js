@@ -39,6 +39,7 @@ const Transition = (OgComponent) => {
         {!showComponent || <OgComponent {...props} />}
         {!isReversing ? (
           <>
+            {/* Creates 5 regtangles and sends them across the screen, and then reverses them*/}
             {[...Array(5)].map((_, index) => (
               <React.Fragment key={index}>
                 <motion.div

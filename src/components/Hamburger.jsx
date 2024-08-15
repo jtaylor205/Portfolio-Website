@@ -4,6 +4,7 @@ const Hamburger = ({ menuOpen, setMenuOpen, className = '' }) => {
     const [isHovering, setIsHovering] = useState(false);
 
     const handleMenuToggle = () => {
+        // If menu is toggled, revert hover animation and open/close hamburger
         setMenuOpen(!menuOpen);
         setIsHovering(false); 
     };
