@@ -1,9 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Transition from '../../transition'
+import TypingEffect from './TypingEffect'
 const About = () => {
   return (
-    <div>About</div>
+    <div> <TypingEffect text={"Hello, I'm Jaedon!"} /></div>
   )
 }
 

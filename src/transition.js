@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 const Transition = (OgComponent) => {
   return function WrappedComponent(props) {
     const [shouldTransition, setShouldTransition] = useState(false);
+    const [showComponent, setShowComponent] = useState(false);
+
 
     useEffect(() => {
       // Check if the page was loaded due to a navigation event or a refresh
@@ -12,6 +14,15 @@ const Transition = (OgComponent) => {
         sessionStorage.removeItem('navigate');
       }
     }, []);
+
+    useEffect(() => {
+      if (shouldTransition) {
+        // Trigger showing the component after a delay or transition completion
+        setTimeout(() => {
+          setShowComponent(true);
+        }, 3000); // Replace with your actual transition duration
+      }
+    }, [shouldTransition]);
 
     const [isReversing, setIsReversing] = useState(false);
 
@@ -25,10 +36,10 @@ const Transition = (OgComponent) => {
 
     return (
       <>
-        <OgComponent {...props} />
+        {!showComponent || <OgComponent {...props} />}
         {!isReversing ? (
           <>
-            {[...Array(3)].map((_, index) => (
+            {[...Array(5)].map((_, index) => (
               <React.Fragment key={index}>
                 <motion.div
                   className="slide-in-gray"
@@ -42,10 +53,10 @@ const Transition = (OgComponent) => {
                   }}
                   style={{
                     position: 'fixed',
-                    top: `${index * 33.33}vh`,
+                    top: `${index * 20}vh`,
                     left: 0,
                     width: '100%',
-                    height: '34vh',
+                    height: '20vh',
                     backgroundColor: 'gray',
                   }}
                 />
@@ -60,10 +71,10 @@ const Transition = (OgComponent) => {
                   }}
                   style={{
                     position: 'fixed',
-                    top: `${index * 33.33}vh`,
+                    top: `${index * 20}vh`,
                     left: 0,
                     width: '100%',
-                    height: '34vh',
+                    height: '20vh',
                     backgroundColor: '#0f0f0f',
                   }}
                   onAnimationComplete={() => {
@@ -75,7 +86,7 @@ const Transition = (OgComponent) => {
           </>
         ) : (
           <>
-            {[...Array(3)].map((_, index) => (
+            {[...Array(5)].map((_, index) => (
               <React.Fragment key={index}>
                 <motion.div
                   initial={{ x: '0%' }}
@@ -88,10 +99,10 @@ const Transition = (OgComponent) => {
                   }}
                   style={{
                     position: 'fixed',
-                    top: `${index * 33.33}vh`,
+                    top: `${index * 20}vh`,
                     left: 0,
                     width: '100%',
-                    height: '34vh',
+                    height: '20vh',
                     backgroundColor: '#0f0f0f',
                     zIndex: 11 - index,
                   }}
@@ -108,7 +119,7 @@ const Transition = (OgComponent) => {
                   }}
                   style={{
                     position: 'fixed',
-                    top: `${index * 33.33}vh`,
+                    top: `${index * 20}vh`,
                     left: 0,
                     width: '100%',
                     height: '34vh',
