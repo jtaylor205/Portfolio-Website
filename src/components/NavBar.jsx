@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import '../css/NavBar.css';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import PushUpWord from './PushUpWord';
 import Hamburger from './Hamburger';

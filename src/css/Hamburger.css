@@ -1,0 +1,73 @@
+/* Hamburger css */
+
+.hamburger {
+    cursor: pointer;
+    width: 1.5vw; 
+    height: 1.5vw; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-around;
+    padding-right: 1vw;
+    padding-top: 1vw;
+    
+  }
+  
+  
+  .hamburger span {
+    height: 0.22vw;
+    width: 100%;
+    background: #c9c9c9;
+    transition: all 0.3s ease;
+    z-index: 100; 
+    margin: 1px;
+  }
+  
+  .hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    background: black;
+  }
+  
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+    background: black;
+  }
+  
+  .hamburger-slideover span {
+    background: black;
+  }
+  
+  .hamburger:not(.open).hover span:nth-child(1) {
+    transform: translateY(-5px);
+  }
+  
+  .hamburger:not(.open).hover span:nth-child(2) {
+    transform: translateY(0px);
+  }
+  
+  .hamburger:not(.open).hover span:nth-child(3) {
+    transform: translateY(5px);
+  }
+  
+  .hamburger.open.hover span:nth-child(1) {
+    transform: rotate(45deg) translateX(-5px);
+  }
+  
+  .hamburger.open.hover span:nth-child(3) {
+    
+    transform: rotate(-45deg) translateX(5px) translateY(5px);
+  }
+  
+
+  @media (max-width: 767px){
+    .hamburger {
+      width: 4vw; 
+      height: 4vw; 
+      padding-right: 4vw;
+      padding-top: 4vw;
+    }
+    
+  };

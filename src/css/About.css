@@ -1,0 +1,155 @@
+/* About css */
+
+.about-header {
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 1;
+    position: relative;
+    top: 2rem;
+    left: 2rem;
+    margin: 0; 
+    padding: 0; 
+    z-index: 1000; 
+}
+
+
+.about-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 12rem;
+  }
+
+  @keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%); /* Start off-screen to the left */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* End at the final position */
+        opacity: 1;
+    }
+}
+
+.description-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centers the image vertically */
+    flex-direction: column;
+    margin-left: 4rem;
+    animation: slideInFromLeft 0.5s ease-out 2.5s forwards; /* Apply the animation */
+    opacity: 0; /* Start hidden and fade in */
+}
+
+.description-image {
+    height: 50%; /* Adjust this as needed */
+    width: 30%;  /* Adjust this as needed */
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 1rem; /* Space between image and text */
+}
+
+.description-text {
+    width: 100%; /* Ensures the text takes the full width */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns text to the left */
+    text-align: left; /* Ensures the text itself is left-aligned */
+}
+  .skills_container {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 11rem; /* Space from right edge */
+    
+  }
+  
+  .skills_row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .skills_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    height: 90px; 
+    width: 145px;
+    border: double 3px transparent;
+    border-image-slice: 1;
+    border-width: 3px;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a), radial-gradient(circle at top left, #51a2e9, #ff4d5a);
+    border-radius: 10px;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    overflow: hidden;
+    opacity: 0;
+    margin-left: 2rem;
+    transition: opacity 1.5s ease-in-out, transform 0.3s ease-out, height 0.3s ease-out; /* Added height transition */
+   
+  }
+  
+  .skills_item.visible {
+    opacity: 1;
+  }
+  
+  .skills_item:hover {
+    transform: scale(1.2);
+  }
+  
+  .skills_item img {
+    width: 80%; 
+    height: 70%; 
+    object-fit: contain;
+    transition: transform 0.3s ease-out;
+    display: block; 
+    margin-top: 0.5rem;
+  }
+  
+  
+  .skills_item:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+  
+  .skill_name {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 1px;
+    opacity: 0; 
+    transform: translateY(10px); 
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out; 
+  }
+  
+  .skills_item:hover .skill_name {
+    opacity: 1; /* Show the name on hover */
+    transform: translateY(0); /* Move into position */
+  }
+
+  @media (max-width: 1200px) {
+    .about-container {
+      flex-direction: column;
+      align-items: center; /* Ensure content is centered when stacked */
+    }
+  
+    .description-container {
+      width: 100%; 
+      left: 0; 
+      top: auto;
+      position: relative; 
+      margin-bottom: 2rem;
+      padding: 1rem; 
+    }
+  
+    .skills_container {
+      width: 100%; 
+      position: relative; 
+      top: auto;
+      right: 0;
+      justify-content: center; 
+      margin-bottom: 2rem; 
+    }
+  }
+  

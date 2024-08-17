@@ -1,0 +1,90 @@
+/* slideoverNav css */
+.slideover-container {
+    position: fixed;
+    right:0;
+    width: 35%; 
+    height: 100%;
+    background-color: #c9c9c9;
+    transform: translateX(100%);
+    transition: transform 0.8s ease;
+    border-radius: 20px;
+    z-index: 20; 
+  }
+  
+  .slideover-container.open {
+    transform: translateX(0); 
+  }
+  
+  
+  .slideover-tabs-container {
+    position: flex;
+    flex-direction: column;
+    margin-top: 2vw;
+  }
+  
+  .slideover-tab {
+    padding-left: 1vw;
+    color: black;
+    font-family: 'Arial', sans-serif;
+    padding-top: 1vw;
+    position: relative; 
+    overflow: hidden; 
+  }
+  
+  .slideover-letter {
+    display: inline-block;
+    color: #000000;
+    font-size: 6vw;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .slideover-links-container {
+    position: fixed;
+    bottom: 0;
+    padding-left: 1vw;
+    display: flex;
+    flex-direction: row;
+    padding-top: 3vw;
+    justify-content: space-around;
+  }
+  
+  .slideover-link {
+    position: relative;
+    margin-left: 1vw;
+    height: 70%;
+    padding: 1vw;
+    color: black;
+    font-family: 'Arial', sans-serif;
+    font-size: 1vw;
+    transition: color 0.3s ease; 
+    cursor: pointer; 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    border: 2px solid #000000;
+    border-radius: 50px; 
+    text-decoration: none; 
+    box-sizing: border-box; 
+    overflow: hidden;
+  }
+  
+  .slideover-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0; 
+    background: #353434;
+    transition: height 0.3s ease; 
+    z-index: -1;
+  }
+  
+  .slideover-link.hover::before {
+    height: 100%;
+  }
+  
+  .slideover-link.hover {
+    color: #c9c9c9; 
+  }
+  

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../css/SlideoverNav.css';
 import { useNavigate } from 'react-router-dom';
 import PushUpWord from './PushUpWord';
 
