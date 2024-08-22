@@ -1,10 +1,23 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Transition from '../../transition'
+import React, { useEffect } from 'react';
+import homeDots from './homeDots';
+import Transition from '../../transition';
+import { RandomReveal } from 'react-random-reveal';
+
 const Home = () => {
+  useEffect(() => {
+    const cleanupDots = homeDots();
+  
+    // Cleanup on unmount
+    return () => {
+      cleanupDots();
+    };
+  }, []);
+
   return (
-    <div>Home</div>
-  )
-}
+    <div className="home-container">
+      <canvas className="connecting-dots"></canvas>
+    </div>
+  );
+};
 
 export default Transition(Home);
