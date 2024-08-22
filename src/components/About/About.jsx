@@ -13,6 +13,7 @@ import reactImg from '../../assets/reactjs.png';
 import pythonImg from '../../assets/python.png';
 import jsImg from '../../assets/javascript.png';
 import Jaedon from '../../assets/jaedon.jpg';
+
 const About = () => {
   const [visibleItems, setVisibleItems] = useState([]);
   const timersRef = useRef([]); // Store timers to clear them later
@@ -29,9 +30,6 @@ const About = () => {
     { title: "SWIFT", image: swiftImg, alt: "SWIFT", delay: 2150 },
     { title: "SWIFTUI", image: swiftUIImg, alt: "SWIFTUI", delay: 3075 },
   ], []);
-
-  
-
 
   const chunkedSkills = useMemo(() => [
     skillItems.slice(0, 3),
@@ -55,37 +53,36 @@ const About = () => {
 
   return (
     <>
-    <div className='about-header'>
-    <TypingEffect text={"Hello, I'm Jaedon!"} />
-    </div>
-    <div className='about-container'>
-      <div className='description-container'>
-        <img className='description-image' src={Jaedon} alt= "Jaedon Taylor"/>
-        
-        <div className='description-text'>
-          I am an undergraduate Computer Science student with a minor in Economics at the University of Florida. 
-          With a strong foundation in software development and project management, I’ve taken on roles that allow me to contribute both
-          technically and strategically. Whether coding, leading teams, or adapting to new challenges, I’m passionate about leveraging 
-          technology to solve real-world problems and drive innovation.
+      <div className='about-header'>
+        <TypingEffect text={"Hello, I'm Jaedon!"} />
+      </div>
+      <div className='about-container'>
+        <div className='description-container'>
+          <img className='description-image' src={Jaedon} alt="Jaedon Taylor" />
+          <div className='description-text'>
+            I am an undergraduate Computer Science student with a minor in Economics at the University of Florida. 
+            With a strong foundation in software development and project management, I’ve taken on roles that allow me to contribute both
+            technically and strategically. Whether coding, leading teams, or adapting to new challenges, I’m passionate about leveraging 
+            technology to solve real-world problems and drive innovation.
+          </div>
+        </div>
+        <div className="skills_container">
+          {chunkedSkills.map((row, rowIndex) => (
+            <div className="skills_row" key={rowIndex}>
+              {row.map((skill, index) => (
+                <div
+                  className={`skills_item ${visibleItems.includes(rowIndex * chunkedSkills[0].length + index) ? 'visible' : ''}`}
+                  key={index}
+                  style={{ transitionDelay: `${skill.delay}ms, transform 0ms` }}
+                >
+                  <img src={skill.image} alt={skill.alt} />
+                  <div className="skill_name">{skill.title}</div>
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
-      <div className="skills_container">
-        {chunkedSkills.map((row, rowIndex) => (
-          <div className="skills_row" key={rowIndex}>
-            {row.map((skill, index) => (
-              <div
-                className={`skills_item ${visibleItems.includes(rowIndex * chunkedSkills[0].length + index) ? 'visible' : ''}`}
-                key={index}
-                style={{ transitionDelay: `${skill.delay}ms, transform 0ms` }}
-              >
-                <img src={skill.image} alt={skill.alt} />
-                <div className="skill_name">{skill.title}</div>
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
-    </div>
     </>
   );
 }

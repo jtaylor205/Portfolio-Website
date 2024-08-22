@@ -1,19 +1,19 @@
 /* slideoverNav css */
 .slideover-container {
-    position: fixed;
-    right:0;
-    width: 35%; 
-    height: 100%;
-    background-color: #c9c9c9;
-    transform: translateX(100%);
-    transition: transform 0.8s ease;
-    border-radius: 20px;
-    z-index: 20; 
-  }
-  
-  .slideover-container.open {
-    transform: translateX(0); 
-  }
+  position: fixed;
+  right: -35%; /* Move the container completely off-screen */
+  width: 35%; 
+  height: 100%;
+  background-color: #c9c9c9;
+  transition: right 0.8s ease; /* Transition the right property */
+  border-radius: 20px;
+  z-index: 20; 
+}
+
+.slideover-container.open {
+  right: 0; /* Slide in the container */
+}
+
   
   
   .slideover-tabs-container {
