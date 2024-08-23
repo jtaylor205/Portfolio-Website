@@ -23,7 +23,7 @@ const SlideoverNav = ({ menuOpen, setMenuOpen }) => {
   const linkItems = [
     { title: "LINKEDIN", link: 'https://www.linkedin.com/in/jaedon-taylor-982316102/' },
     { title: "GITHUB", link: 'https://github.com/jtaylor205' },
-    { title: "RESUME", link: '/resume' },  // Assuming RESUME is an internal route
+    { title: "RESUME", link: '/resume' }, 
   ];
 
   const handleNavClick = (to) => {

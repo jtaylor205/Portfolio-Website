@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import '../../css/About.css';
-import Transition from '../../transition';
+import Transition from '../transition';
 import TypingEffect from './TypingEffect';
 import cppImg from '../../assets/c++.png';
 import htmlImg from '../../assets/html.png';

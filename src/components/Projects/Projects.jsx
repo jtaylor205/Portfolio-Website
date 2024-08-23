@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Transition from '../../transition'
+import Transition from '../transition'
 const Projects = () => {
   return (
     <div>Projects</div>

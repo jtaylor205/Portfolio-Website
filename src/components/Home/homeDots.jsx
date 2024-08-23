@@ -65,7 +65,7 @@ const homeDots = function () {
         };
     } else {
         dots = {
-            nb: 100,
+            nb: 0,
             distance: 0,
             d_radius: 0,
             array: [],

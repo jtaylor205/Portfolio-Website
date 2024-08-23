@@ -5,6 +5,7 @@
   display: flex;
   justify-content: space-between; 
   align-items: flex-start; 
+  z-index: 999;
   width: 100%;
 }
 .nav-name-container {

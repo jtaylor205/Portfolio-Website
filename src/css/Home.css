@@ -1,3 +1,8 @@
+html, body {
+    overscroll-behavior: none; 
+}
+
+
 .home-container {
     position: relative;
     height: 100vh;
@@ -21,7 +26,35 @@
     transform: translate(-50%, -50%);
     color: #fafafa;
     font-weight: 300;
-    z-index: 999;
-    font-size: 2rem;
+    z-index: 2;
+    font-size: 3rem;
     text-align: center;
+}
+
+
+.navigate-button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        background-color: rgba(26, 26, 26, 0.6);
+        border: 2px solid #ff4d5a;
+        border-radius: 2px;
+        color: #ff4d5a;
+        font-size: 2.4rem;
+        font-weight: 500;
+        cursor: pointer;
+}
+
+.bottomButtons{
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+    margin-left: 1rem;
+}
+.button-image {
+    filter: invert(100%) brightness(2);
+    width: 3rem; 
+    height: 3rem;
+    margin-left: 1rem;
 }
