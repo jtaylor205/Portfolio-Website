@@ -85,12 +85,16 @@ const homeDots = function () {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
 
-        const dotDistance = Math.sqrt(
-            (this.x - mousePosition.x) ** 2 + (this.y - mousePosition.y) ** 2
-        );
-        const distanceRatio = dotDistance / (windowSize / 1.7);
+        let dotOpacity = 1;
+        if (windowSize > 1100) {
+            const dotDistance = Math.sqrt(
+                (this.x - mousePosition.x) ** 2 + (this.y - mousePosition.y) ** 2
+            );
+            const distanceRatio = dotDistance / (windowSize / 1.7);
+            dotOpacity = 1 - distanceRatio;
+        }
 
-        ctx.fillStyle = this.colour.slice(0, -1) + `,${1 - distanceRatio})`;
+        ctx.fillStyle = this.colour.slice(0, -1) + `,${dotOpacity})`;
         ctx.fill();
     };
 

@@ -4,11 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import PushUpWord from './PushUpWord';
 
 const SlideoverNav = ({ menuOpen, setMenuOpen }) => {
-  const [navHoverIndex, setNavHoverIndex] = useState(-1);
   const navigate = useNavigate();
-
-  const handleNavMouseEnter = (index) => setNavHoverIndex(index);
-  const handleNavMouseLeave = () => setNavHoverIndex(-1);
 
   const [linkHoverIndex, setLinkHoverIndex] = useState(-1);
   const handleLinkMouseEnter = (index) => setLinkHoverIndex(index);

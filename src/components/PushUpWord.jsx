@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import gsap from 'gsap';
-import { PiX } from 'react-icons/pi';
 
 const PushUpWord = ({ word, alternate, wordClass, letterClass}) => {
   const [letters, setLetters] = useState([]);

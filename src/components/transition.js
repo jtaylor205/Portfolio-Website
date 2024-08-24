@@ -6,7 +6,6 @@ const Transition = (OgComponent) => {
     const [shouldTransition, setShouldTransition] = useState(false);
     const [showComponent, setShowComponent] = useState(false);
 
-
     useEffect(() => {
       // Check if the page was loaded due to a navigation event or a refresh
       if (sessionStorage.getItem('navigate')) {
@@ -39,7 +38,7 @@ const Transition = (OgComponent) => {
         {!showComponent || <OgComponent {...props} />}
         {!isReversing ? (
           <>
-            {/* Creates 5 regtangles and sends them across the screen, and then reverses them*/}
+            {/* Creates 5 regtangles and sends them across the screen, and then reverses them */}
             {[...Array(5)].map((_, index) => (
               <React.Fragment key={index}>
                 <motion.div
@@ -59,6 +58,7 @@ const Transition = (OgComponent) => {
                     width: '100%',
                     height: '20vh',
                     backgroundColor: 'gray',
+                    zIndex: 1100 + index, // Increased zIndex
                   }}
                 />
                 <motion.div
@@ -77,6 +77,7 @@ const Transition = (OgComponent) => {
                     width: '100%',
                     height: '20vh',
                     backgroundColor: '#0f0f0f',
+                    zIndex: 1100 + index + 1, // Increased zIndex
                   }}
                   onAnimationComplete={() => {
                     if (index === 2) handleAnimationComplete();
@@ -105,7 +106,7 @@ const Transition = (OgComponent) => {
                     width: '100%',
                     height: '20vh',
                     backgroundColor: '#0f0f0f',
-                    zIndex: 11 - index,
+                    zIndex: 1111 - index, // Increased zIndex
                   }}
                 />
                 <motion.div
@@ -125,7 +126,7 @@ const Transition = (OgComponent) => {
                     width: '100%',
                     height: '34vh',
                     backgroundColor: 'gray',
-                    zIndex: 10 - index,
+                    zIndex: 1110 - index, // Increased zIndex
                   }}
                 />
               </React.Fragment>

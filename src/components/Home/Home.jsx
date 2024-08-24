@@ -41,10 +41,9 @@ const linkItems = [
       <canvas className="connecting-dots"></canvas>
       <div className='heading'>
       <RandomReveal isPlaying duration={2} characters="Jaedon Taylor" />
-      <div>University of Florida Student</div>
-      <div>Computer Science - 2026</div>
-      <div className='navigate-button'>View my work</div>
-      
+        <div className= 'subHeading'>University of Florida Student</div>
+        <div className= 'subHeading'>Computer Science - 2026</div>
+        <div className='navigate-button'>View my work</div>
       </div>
       <div className='bottomButtons'>
   {linkItems.map((item, index) => (

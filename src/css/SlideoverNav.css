@@ -1,8 +1,8 @@
 /* slideoverNav css */
 .slideover-container {
   position: fixed;
-  right: -35%; /* Move the container completely off-screen */
-  width: 35%; 
+  right: -36%; /* Move the container completely off-screen */
+  width: 36%; 
   height: 100%;
   background-color: #c9c9c9;
   transition: right 0.8s ease; /* Transition the right property */

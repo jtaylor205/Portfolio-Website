@@ -16,7 +16,10 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 0;
+    opacity: 0; 
+    animation: fadeIn 2s ease-in forwards; 
+    animation-delay: 3s;
 }
 
 .heading {
@@ -26,24 +29,30 @@ html, body {
     transform: translate(-50%, -50%);
     color: #fafafa;
     font-weight: 300;
-    z-index: 2;
+    z-index: 0;
     font-size: 3rem;
     text-align: center;
+    cursor: default;
 }
+
+.subHeading {
+    opacity: 0; 
+    animation: fadeIn 2s ease-in forwards;
+    animation-delay: 2s;
+  }
 
 
 .navigate-button {
-        position: relative;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        background-color: rgba(26, 26, 26, 0.6);
-        border: 2px solid #ff4d5a;
-        border-radius: 2px;
-        color: #ff4d5a;
-        font-size: 2.4rem;
-        font-weight: 500;
-        cursor: pointer;
+    width: 45%;
+    position: relative;
+    align-items: center;
+    background-color: rgba(26, 26, 26, 0.6);
+    border: 2px solid #ff4d5a;
+    border-radius: 5px;
+    color: #ff4d5a;
+    font-size: 2.4rem;
+    font-weight: 500;
+    cursor: pointer;
 }
 
 .bottomButtons{
@@ -51,6 +60,8 @@ html, body {
     bottom: 0;
     z-index: 3;
     margin-left: 1rem;
+    opacity: 0; 
+    animation: fadeIn 0.1s ease-in forwards;
 }
 .button-image {
     filter: invert(100%) brightness(2);
@@ -58,3 +69,20 @@ html, body {
     height: 3rem;
     margin-left: 1rem;
 }
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+
+  @media (max-width: 1100px) {
+    .connecting-dots {
+        opacity: 1;
+        animation: none;
+    }
+  }

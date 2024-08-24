@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between; 
   align-items: flex-start; 
-  z-index: 999;
+  z-index: 1;
   width: 100%;
 }
 .nav-name-container {
@@ -66,6 +66,6 @@
   justify-content: flex-start;
   flex-grow: 1;
   margin: 1vw; 
-  padding-left: 30vw;
+  padding-left: 25vw;
   font-weight: bold;
 }
