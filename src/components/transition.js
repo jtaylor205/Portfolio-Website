@@ -58,7 +58,7 @@ const Transition = (OgComponent) => {
                     width: '100%',
                     height: '20vh',
                     backgroundColor: 'gray',
-                    zIndex: 1100 + index, // Increased zIndex
+                    zIndex: 1100 + index, 
                   }}
                 />
                 <motion.div
@@ -77,7 +77,7 @@ const Transition = (OgComponent) => {
                     width: '100%',
                     height: '20vh',
                     backgroundColor: '#0f0f0f',
-                    zIndex: 1100 + index + 1, // Increased zIndex
+                    zIndex: 1100 + index + 1, 
                   }}
                   onAnimationComplete={() => {
                     if (index === 2) handleAnimationComplete();
@@ -106,7 +106,7 @@ const Transition = (OgComponent) => {
                     width: '100%',
                     height: '20vh',
                     backgroundColor: '#0f0f0f',
-                    zIndex: 1111 - index, // Increased zIndex
+                    zIndex: 1111 - index,
                   }}
                 />
                 <motion.div
@@ -126,7 +126,7 @@ const Transition = (OgComponent) => {
                     width: '100%',
                     height: '34vh',
                     backgroundColor: 'gray',
-                    zIndex: 1110 - index, // Increased zIndex
+                    zIndex: 1110 - index, 
                   }}
                 />
               </React.Fragment>

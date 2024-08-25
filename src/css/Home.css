@@ -19,11 +19,15 @@ html, body {
     z-index: 0;
     opacity: 0; 
     animation: fadeIn 2s ease-in forwards; 
-    animation-delay: 3s;
+    animation-delay: 4s;
 }
 
 .heading {
+    display: flex;
+    flex-direction: column;
     position: absolute;
+    justify-content: center;
+    align-items: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -41,11 +45,12 @@ html, body {
     animation-delay: 2s;
   }
 
-
 .navigate-button {
     width: 45%;
     position: relative;
-    align-items: center;
+    display: flex;
+    justify-content: center;  /* Centers the text inside the button */
+    align-items: center;      /* Centers the text inside the button */
     background-color: rgba(26, 26, 26, 0.6);
     border: 2px solid #ff4d5a;
     border-radius: 5px;
@@ -53,6 +58,15 @@ html, body {
     font-size: 2.4rem;
     font-weight: 500;
     cursor: pointer;
+    transition: transform 0.3s ease-out;
+    opacity: 0;
+    margin-top: 10%;
+    animation: fadeUp 1.5s ease-in forwards;
+    animation-delay: 3s;
+}
+
+.navigate-button:hover{
+    transform: scale(1.1);
 }
 
 .bottomButtons{
@@ -61,7 +75,9 @@ html, body {
     z-index: 3;
     margin-left: 1rem;
     opacity: 0; 
-    animation: fadeIn 0.1s ease-in forwards;
+    
+    animation: fadeIn 2s ease-in forwards;
+    animation-delay: 2s;
 }
 .button-image {
     filter: invert(100%) brightness(2);
@@ -79,6 +95,16 @@ html, body {
     }
   }
 
+  @keyframes fadeUp{
+    from{
+        opacity: 0;
+        margin-top: 10%
+    }
+    to {
+        opacity: 1;
+        margin-top: 0;
+    }
+  }
 
   @media (max-width: 1100px) {
     .connecting-dots {

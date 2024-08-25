@@ -19,7 +19,7 @@
   .slideover-tabs-container {
     position: flex;
     flex-direction: column;
-    margin-top: 2vw;
+    margin-top: 3vw;
   }
   
   .slideover-tab {

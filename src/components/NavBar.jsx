@@ -1,15 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../css/NavBar.css';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import PushUpWord from './PushUpWord';
 import Hamburger from './Hamburger';
 import SlideoverNav from './SlideoverNav';
 
-const NavBar = () => {
-  // Define the state for menu open/close
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  // Define refs for the hamburger and slideover navigation elements
+const NavBar = ({ menuOpen, setMenuOpen, navigateButtonRef }) => {  
   const hamburgerRef = useRef(null);
   const slideoverNavRef = useRef(null);
 
@@ -23,15 +19,16 @@ const NavBar = () => {
   ];
 
   useEffect(() => {
-    
     const handleClickOutside = (event) => {
       // Closes menu if click is outside of hamburger / slideoverNav
-      if (
-        slideoverNavRef.current &&
-        !slideoverNavRef.current.contains(event.target) &&
-        hamburgerRef.current &&
-        !hamburgerRef.current.contains(event.target)
-      ) {
+      const isOutsideClick = 
+        (slideoverNavRef.current && !slideoverNavRef.current.contains(event.target)) &&
+        (hamburgerRef.current && !hamburgerRef.current.contains(event.target));
+
+      const isOutsideNavigateButton = 
+        navigateButtonRef.current && !navigateButtonRef.current.contains(event.target);
+
+      if (isOutsideClick && (!navigateButtonRef.current || isOutsideNavigateButton)) {
         setMenuOpen(false);
       }
     };
@@ -40,14 +37,12 @@ const NavBar = () => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, []);
+  }, [setMenuOpen, navigateButtonRef]);
 
   const handleNavClick = (to) => {
     if (location.pathname === to) {
-      // If the user is already on the current route, refresh the page
       window.location.reload();
     } else {
-      // Otherwise, navigate to the new route
       sessionStorage.setItem('navigate', 'true');
       navigate(to);
     }
@@ -64,7 +59,6 @@ const NavBar = () => {
       </div>
       <div className="nav-list">
         {navItems.map((item, index) => (
-          //For each item in navItems, creates a spot on navbar with alternating PushUpWord
           <div key={index} onClick={() => handleNavClick(item.to)}>
             <Link className="nav-link" to={item.to}>
               <PushUpWord
