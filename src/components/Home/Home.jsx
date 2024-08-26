@@ -6,6 +6,7 @@ import githubImg from '../../assets/github.png';
 import linkedinImg from '../../assets/linkedin.png';
 import resumeImg from '../../assets/resume.png';
 import { RandomReveal } from 'react-random-reveal';
+import resumePDF from '../../assets/resume.pdf';
 
 const Home = ({menuOpen, setMenuOpen, navigateButtonRef }) => {
   useEffect(() => {
@@ -16,26 +17,38 @@ const Home = ({menuOpen, setMenuOpen, navigateButtonRef }) => {
   }, []);
 
   const linkItems = [
-    { title: "LINKEDIN", link: 'https://www.linkedin.com/in/jaedon-taylor-982316102/', imgSrc: linkedinImg, alt: "Linkedin" },
+    { title: "LINKEDIN", link: 'https://www.linkedin.com/in/jaedon-taylor/', imgSrc: linkedinImg, alt: "Linkedin" },
     { title: "GITHUB", link: 'https://github.com/jtaylor205', imgSrc: githubImg, alt: "Github" },
-    { title: "RESUME", link: '#', imgSrc: resumeImg, alt: "Resume"}, // Add onClick for resume
+    { title: "RESUME", link: resumePDF, imgSrc: resumeImg, alt: "Resume", isDownload: true }, 
   ];
+
+  const handleLinkClick = (link, isDownload) => {
+    if (isDownload) {
+      const linkElement = document.createElement('a');
+      linkElement.href = link;
+      linkElement.download = 'Jaedon_Taylor_Resume.pdf'; 
+      document.body.appendChild(linkElement);
+      linkElement.click();
+      document.body.removeChild(linkElement);
+    } else {
+      window.open(link, '_blank');
+    }
+  };
+  
 
   return (
     <div className="home-container">
       <canvas className="connecting-dots"></canvas>
       <div className='heading'>
+        <div className= 'heading-title'>
         <RandomReveal isPlaying duration={2} characters="Jaedon Taylor" />
+        </div>
         <div className= 'subHeading'>University of Florida Student</div>
         <div className= 'subHeading'>Computer Science</div>
         <div 
           className='navigate-button' 
-          onClick={() => {
-            console.log('Navigate button clicked'); // Debugging log
-            setMenuOpen(!menuOpen);
-            
-          }} 
-          ref={navigateButtonRef}  // Attach ref to navigate button
+          onClick={() => {setMenuOpen(!menuOpen);}} 
+          ref={navigateButtonRef} 
         >
           View my work
         </div>
@@ -47,9 +60,13 @@ const Home = ({menuOpen, setMenuOpen, navigateButtonRef }) => {
             target={item.onClick ? '_self' : '_blank'}
             rel={item.onClick ? undefined : "noopener noreferrer"} 
             key={index}
-            onClick={item.onClick ? (e) => { e.preventDefault(); item.onClick(); } : undefined}
+            onClick={() => handleLinkClick(item.link, item.isDownload)} 
           >
-            <img className='button-image' src={item.imgSrc} alt={item.alt} />
+            <img 
+              className={`button-image ${item.title === 'RESUME' ? 'small-resume' : ''}`}  // Apply 'small-resume' class if index is 2
+              src={item.imgSrc} 
+              alt={item.alt} 
+            />
           </a>
         ))}
       </div>

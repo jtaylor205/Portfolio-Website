@@ -39,10 +39,28 @@ html, body {
     cursor: default;
 }
 
+.heading-title{
+    font-family: 'Montserrat', sans-serif; /* Example font */
+    font-size: 5rem; /* Adjust size as needed */
+    font-weight: 700; /* Bold */
+    color: #FFFFFF; /* White color */
+}
+
 .subHeading {
     opacity: 0; 
     animation: fadeIn 2s ease-in forwards;
     animation-delay: 2s;
+    font-family: 'poppins', sans-serif;  /* Change to your desired font family */
+    font-size: 2rem;                 /* Adjust the font size */
+    font-weight: bold;                 /* Adjust the font weight (e.g., normal, bold, bolder, lighter, or a number) */
+    font-style: italic;                /* Apply italic style if desired */
+    color: #ffffff;                       /* Change the text color */
+    letter-spacing: 0.1rem;            /* Adjust the spacing between letters */
+    text-transform: uppercase; 
+  }
+
+  .subHeading:nth-child(3) {
+    animation-delay: 2.5s;
   }
 
 .navigate-button {
@@ -75,7 +93,6 @@ html, body {
     z-index: 3;
     margin-left: 1rem;
     opacity: 0; 
-    
     animation: fadeIn 2s ease-in forwards;
     animation-delay: 2s;
 }
@@ -85,6 +102,10 @@ html, body {
     height: 3rem;
     margin-left: 1rem;
 }
+
+.small-resume {
+    width: 2.5rem;
+  }
 
 @keyframes fadeIn {
     from {
