@@ -40,22 +40,22 @@ html, body {
 }
 
 .heading-title{
-    font-family: 'Montserrat', sans-serif; /* Example font */
-    font-size: 5rem; /* Adjust size as needed */
-    font-weight: 700; /* Bold */
-    color: #FFFFFF; /* White color */
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 5rem;
+    font-weight: 700; 
+    color: #FFFFFF; 
 }
 
 .subHeading {
     opacity: 0; 
     animation: fadeIn 2s ease-in forwards;
     animation-delay: 2s;
-    font-family: 'poppins', sans-serif;  /* Change to your desired font family */
-    font-size: 2rem;                 /* Adjust the font size */
-    font-weight: bold;                 /* Adjust the font weight (e.g., normal, bold, bolder, lighter, or a number) */
-    font-style: italic;                /* Apply italic style if desired */
-    color: #ffffff;                       /* Change the text color */
-    letter-spacing: 0.1rem;            /* Adjust the spacing between letters */
+    font-family: 'poppins', sans-serif;  
+    font-size: 2rem;                
+    font-weight: bold;               
+    font-style: italic;          
+    color: #ffffff;             
+    letter-spacing: 0.1rem;          
     text-transform: uppercase; 
   }
 
@@ -67,8 +67,8 @@ html, body {
     width: 45%;
     position: relative;
     display: flex;
-    justify-content: center;  /* Centers the text inside the button */
-    align-items: center;      /* Centers the text inside the button */
+    justify-content: center;  
+    align-items: center;     
     background-color: rgba(26, 26, 26, 0.6);
     border: 2px solid #ff4d5a;
     border-radius: 5px;
