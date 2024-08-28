@@ -16,7 +16,6 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 4.5vw;
-  
 }
 
 @media screen and (max-width: 991px) {
@@ -49,6 +48,12 @@ body {
   border-radius: 45px;
   padding: 40px;
   cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .project-title {
