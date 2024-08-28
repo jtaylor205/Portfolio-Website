@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../css/Projects.css';
 import Transition from '../transition';
-import { SiCoursera, SiCplusplus, SiCss3, SiGooglegemini, SiHtml5, SiJavascript, SiOpenai, SiPython, SiReact, SiSwift, SiNumpy } from "react-icons/si";
+import { SiCoursera, SiCplusplus, SiCss3, SiGooglegemini, SiHtml5, SiJavascript, SiOpenai, SiPython, SiReact, SiSwift, SiNumpy, SiGithub } from "react-icons/si";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -11,25 +11,29 @@ const Projects = () => {
       title: "Solace",
       type: "Mobile App/AI",
       info: "Yes",
+      link: "https://github.com/jtaylor205/solace",
       languages: <><SiReact /><SiJavascript /><SiGooglegemini/></>,
     }, 
     {
       title: "Minesweeper",
       type: "Game Development",
       info: "Yes",
+      link: "https://github.com/jtaylor205/minesweeper",
       languages: <SiCplusplus />,
-    },
-    {
-      title: "Sudoku Generator",
-      type: "Game Development",
-      info: "Yes",
-      languages: <SiPython />,
     },
     {
       title: "Food Fridge",
       type: "Mobile App",
       info: "Yes",
+      link: "https://github.com/jtaylor205/food-fridge",
       languages: <SiSwift />,
+    },
+    {
+      title: "Phone Guru",
+      type: "Web Development/AI",
+      info: "Yes",
+      link: "https://github.com/jtaylor205/verizon-hack",
+      languages: <><SiPython /><SiHtml5/><SiCss3/><SiJavascript/><SiOpenai/></>,
     },
     {
       title: "File System",
@@ -38,16 +42,17 @@ const Projects = () => {
       languages: <><SiCoursera/><SiCplusplus /></>,
     },
     {
+      title: "Sudoku Generator",
+      type: "Game Development",
+      info: "Yes",
+      link: "https://github.com/jtaylor205/sudoku",
+      languages: <SiPython />,
+    },
+    {
       title: "Stock Market Trading Analyzer",
       type: "Data Analysis",
       info: "No",
       languages: <><SiPython /><SiNumpy /></>,
-    },
-    {
-      title: "Phone Guru",
-      type: "Web Development/AI",
-      info: "Yes",
-      languages: <><SiPython /><SiHtml5/><SiCss3/><SiJavascript/><SiOpenai/></>,
     },
     {
       title: "AVL Tree",
@@ -56,7 +61,6 @@ const Projects = () => {
       languages: <SiCplusplus />,
     },
   ];
-
 
   const handleCardClick = (project) => {
     setSelectedProject(project);
@@ -79,6 +83,11 @@ const Projects = () => {
             <div className='project-title'>{project.title}</div>
             <div className='project-type'>{project.type}</div>
             <div className='project-languages'>{project.languages}</div>
+            {project.link && (
+              <a href={project.link} target="_blank" rel="noopener noreferrer" className='github-link' onClick={(e) => e.stopPropagation()}>
+                <SiGithub />
+              </a>
+            )}
           </div>
         ))}
       </div>
@@ -90,6 +99,11 @@ const Projects = () => {
             <div className='project-title'>{selectedProject.title}</div>
             <div className='project-type'>{selectedProject.type}</div>
             <div className='project-languages'>{selectedProject.languages}</div>
+            {selectedProject.link && (
+              <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className='github-link modal-github-link'>
+                <SiGithub />
+              </a>
+            )}
           </div>
         </div>
       )}

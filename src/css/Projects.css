@@ -1,72 +1,145 @@
+body {
+  background-color: black;
+}
+
+.projects-header {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 60px;
+}
+
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Create 4 columns */
-    grid-template-rows: repeat(2, 1fr); /* Create 2 rows */
-    gap: 20px;
-    padding: 20px;
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 4.5vw;
   
+}
 
-  .project-box {
-    height: 10vw;
-    background-color: #969090;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-image: linear-gradient(#1a1a1a, #1a1a1a), linear-gradient(270deg, #51a2e9, #ff4d5a, #51a2e9);
-    background-origin: border-box;
-    border: double 3px transparent;
-    background-clip: content-box, border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 1; /* Ensure project boxes are beneath the modal */
+@media screen and (max-width: 991px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .project-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000; /* Ensure the overlay is on top of other elements */
-  }
+}
 
-  
-  .modal-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    position: relative;
-    width: 60%;
-    max-width: 800px;
-    min-width: 300px;
-    height: 60%;
-    max-height: 80%;
-    overflow-y: auto;
-    z-index: 1001; /* Ensure the modal content is on top of the overlay */
-  }
-  
-  .modal-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  
-  .project-title, .project-type, .project-languages {
-    margin-bottom: 15px;
-  }
-  
+.github-link {
+  position: absolute;
+  right: 20px;
+  color: #fff;
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.github-link:hover {
+  color: #6e5494; 
+}
+
+.project-box {
+  max-width: 550px;
+  border: 0;
+  width: 100%;
+  margin-inline: auto;
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(71deg, #080509, #1a171c, #080509);
+  background-clip: padding-box;
+  border-radius: 45px;
+  padding: 40px;
+  cursor: pointer;
+}
+
+.project-title {
+  font-weight: 600;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 40px;
+  font-style: normal;
+  font-size: 28px;
+  padding-bottom: 8px;
+}
+
+.project-type {
+  font-weight: 600;
+  line-height: 32px;
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.project-languages {
+  display: flex;
+  gap: 10px;
+  font-size: 24px;
+  color: white;
+}
+
+.bg-green-box::after,
+.bg-white-box::after,
+.bg-yellow-box::after,
+.bg-blue-box::after {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  content: "";
+  z-index: -1;
+  border-radius: 45px;
+}
+
+.bg-green-box::after {
+  background: linear-gradient(71deg, #0d1212, #3da077, #0d1212);
+}
+
+.bg-white-box::after {
+  background: linear-gradient(71deg, #121013, #b0afb0, #121013);
+}
+
+.bg-yellow-box::after {
+  background: linear-gradient(71deg, #110e0e, #afa220, #110e0e);
+}
+
+.bg-blue-box::after {
+  background: linear-gradient(71deg, #0c0a0e, #5f6fad, #0c0a0e);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: #080509;
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 80%;
+  text-align: center;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #ff4d5a;
+}
