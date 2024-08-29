@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import '../../css/Projects.css';
 import Transition from '../transition';
+import mineSweepeerImg1 from '../../assets/minesweeper1.png';
+import mineSweepeerImg2 from '../../assets/minesweeper2.png';
+import sudokuImg1 from '../../assets/sudoku1.png';
+import sudokuImg2 from '../../assets/sudoku2.png';
 import { SiCoursera, SiCplusplus, SiCss3, SiGooglegemini, SiHtml5, SiJavascript, SiOpenai, SiPython, SiReact, SiSwift, SiNumpy, SiGithub } from "react-icons/si";
 
 const Projects = () => {
@@ -12,6 +16,7 @@ const Projects = () => {
       type: "Mobile App/AI",
       info: "Yes",
       link: "https://github.com/jtaylor205/solace",
+      bio: "Mental Wellness Application harnessing the power of generative AI to empower users in achieving their daily goals, maintaining a personal journal, and engaging in meaningful conversations with an AI therapist. This comprehensive platform integrates these essential mental health tools into one seamless experience, all wrapped in a beautifully designed and intuitive interface that promotes well-being and mindfulness.",
       languages: <><SiReact /><SiJavascript /><SiGooglegemini/></>,
     }, 
     {
@@ -19,6 +24,8 @@ const Projects = () => {
       type: "Game Development",
       info: "Yes",
       link: "https://github.com/jtaylor205/minesweeper",
+      images: [mineSweepeerImg1, mineSweepeerImg2],
+      bio: "A Minesweeper game developed in C++ using the SFML library, featuring a built-in timer and a local leaderboard to track and celebrate your best times. This classic puzzle game is enhanced with smooth graphics and responsive gameplay, offering an engaging experience for both casual and competitive players.",
       languages: <SiCplusplus />,
     },
     {
@@ -26,6 +33,7 @@ const Projects = () => {
       type: "Mobile App",
       info: "Yes",
       link: "https://github.com/jtaylor205/food-fridge",
+      bio: "A SwiftUI application where users can efficiently manage their food inventory by storing items in a 'Fridge' and sorting them by food type. The app also enables users to create recipes using ingredients from their fridge and easily generate shopping lists for items needed for recipes or other purposes. It's a comprehensive tool designed to streamline meal planning and grocery shopping.",
       languages: <SiSwift />,
     },
     {
@@ -33,31 +41,37 @@ const Projects = () => {
       type: "Web Development/AI",
       info: "Yes",
       link: "https://github.com/jtaylor205/verizon-hack",
+      bio: "A web-based application that assists users in finding the perfect phone based on their specific needs and preferences. Users can input the specifications they value most in a phone, and the AI-driven system analyzes mobile phone data to recommend the best possible phone matches for the user.",
       languages: <><SiPython /><SiHtml5/><SiCss3/><SiJavascript/><SiOpenai/></>,
     },
     {
       title: "File System",
       type: "Operating Systems",
       info: "No",
+      bio: "A userspace filesystem daemon using the FUSE API, designed to read from and write to WAD files. Also utilizesa C++ library for parsing and manipulating WAD file headers, descriptors, and lump data, enabling efficient data handling and manipulation within the filesystem.",
       languages: <><SiCoursera/><SiCplusplus /></>,
     },
     {
       title: "Sudoku Generator",
       type: "Game Development",
       info: "Yes",
+      images: [sudokuImg1, sudokuImg2],
       link: "https://github.com/jtaylor205/sudoku",
+      bio: "A Sudoku generator that creates boards based on chosen difficulty levels. Leveraging Pygame, users can sketch, delete, and submit answers as they attempt to solve the puzzle, providing an interactive and engaging experience.",
       languages: <SiPython />,
     },
     {
       title: "Stock Market Trading Analyzer",
       type: "Data Analysis",
       info: "No",
+      bio: "Analyzed market data using financial indicators to identify trading opportunities. Implemented and optimized trading algorithms, using Python and libraries like Pandas, NumPy, and Backtest.py, to backtest historical data and refine effective trading strategies",
       languages: <><SiPython /><SiNumpy /></>,
     },
     {
       title: "AVL Tree",
       type: "Data Structures",
       info: "No",
+      bio: "Implemented an AVL Tree in C++ that allows for insertion, deletion, and pre-order, in-order, and post-order traversal of nodes within the tree. The program also includes features such as balancing the tree, calculating the height of the tree, and finding the balance factor of each node.",
       languages: <SiCplusplus />,
     },
   ];
@@ -98,10 +112,18 @@ const Projects = () => {
             <button className="modal-close" onClick={handleModalClose}>✕</button>
             <div className='project-title'>{selectedProject.title}</div>
             <div className='project-type'>{selectedProject.type}</div>
+            {selectedProject.images && (
+              <div className='project-images'>
+                {selectedProject.images.map((image, index) => (
+                  <img key={index} src={image} alt={`${selectedProject.title} screenshot ${index + 1}`} className='project-image' />
+                ))}
+              </div>
+            )}
+            <div className='project-bio'>{selectedProject.bio}</div>
             <div className='project-languages'>{selectedProject.languages}</div>
             {selectedProject.link && (
               <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className='github-link modal-github-link'>
-                <SiGithub />
+                <SiGithub size={40} />
               </a>
             )}
           </div>

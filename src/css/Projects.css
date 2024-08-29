@@ -110,6 +110,32 @@ body {
 .bg-blue-box::after {
   background: linear-gradient(71deg, #0c0a0e, #5f6fad, #0c0a0e);
 }
+.project-box {
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.project-box:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.bg-green-box::after,
+.bg-white-box::after,
+.bg-yellow-box::after,
+.bg-blue-box::after {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.project-box:hover .bg-green-box::after,
+.project-box:hover .bg-white-box::after,
+.project-box:hover .bg-yellow-box::after,
+.project-box:hover .bg-blue-box::after {
+  opacity: 1;
+}
 
 /* Modal Styles */
 .modal-overlay {
@@ -122,17 +148,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 100;
+  animation: slideDownFadeIn 0.5s ease forwards;
 }
 
 .modal-content {
   background-color: #080509;
   padding: 40px;
   border-radius: 20px;
-  max-width: 80%;
+  max-width: 60%; /* Reduce the width of the modal */
   text-align: center;
   position: relative;
+  animation: slideDownFadeIn 0.5s ease forwards;
 }
+
 
 .modal-close {
   position: absolute;
@@ -147,4 +176,39 @@ body {
 
 .modal-close:hover {
   color: #ff4d5a;
+}
+
+.project-images {
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+  margin-bottom: 2vw;
+}
+
+.project-image {
+  width: 20vw; /* Adjust the width to a larger size */
+  height: auto;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  animation: float 3s ease-in-out infinite; /* Add floating animation */
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Adjust the floating distance */
+  }
+}
+
+@keyframes slideDownFadeIn {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
