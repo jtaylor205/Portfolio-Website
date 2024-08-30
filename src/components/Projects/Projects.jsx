@@ -26,7 +26,7 @@ const Projects = () => {
       link: "https://github.com/jtaylor205/solace",
       screen: "Mobile",
       images: [solaceImg1, solaceImg2, solaceImg3],
-      bio: "Mental Wellness Application harnessing the power of generative AI to empower users in achieving their daily goals, maintaining a personal journal, and engaging in meaningful conversations with an AI therapist. This comprehensive platform integrates these essential mental health tools into one seamless experience, all wrapped in a beautifully designed and intuitive interface that promotes well-being and mindfulness.",
+      bio: "Mental Wellness Application harnessing the power of generative AI to empower users in achieving their daily goals, maintaining a personal journal, and engaging in meaningful conversations with an AI therapist.",
       languages: <><SiReact /><SiJavascript /><SiGooglegemini/><SiFirebase/></>,
     }, 
     {
@@ -36,7 +36,7 @@ const Projects = () => {
       link: "https://github.com/jtaylor205/minesweeper",
       images: [mineSweepeerImg1, mineSweepeerImg2],
       screen: "Computer",
-      bio: "A Minesweeper game developed in C++ using the SFML library, featuring a built-in timer and a local leaderboard to track and celebrate your best times. This classic puzzle game is enhanced with smooth graphics and responsive gameplay, offering an engaging experience for both casual and competitive players.",
+      bio: "The beloved puzzle game developed in C++ using the SFML library, featuring a built-in timer and a local leaderboard to track and celebrate your best times.",
       languages: <><SiCplusplus /><SiSfml/></>,
     },
     {
@@ -46,7 +46,7 @@ const Projects = () => {
       link: "https://github.com/jtaylor205/food-fridge",
       images: [fridgeImg1, fridgeImg2, fridgeImg3],
       screen: "Mobile",
-      bio: "A SwiftUI application where users can efficiently manage their food inventory by storing items in a 'Fridge' and sorting them by food type. The app also enables users to create recipes using ingredients from their fridge and easily generate shopping lists for items needed for recipes or other purposes. It's a comprehensive tool designed to streamline meal planning and grocery shopping.",
+      bio: "A SwiftUI application where users can efficiently manage their food inventory by storing items in a 'Fridge', create recipes using ingredients from their fridge and easily generate shopping lists.",
       languages: <><SiIcloud /><SiSwift /></>,
     },
     {
@@ -56,7 +56,7 @@ const Projects = () => {
       link: "https://github.com/jtaylor205/verizon-hack",
       images: [guruImg1, guruImg2],
       screen: "Computer",
-      bio: "A web-based application that assists users in finding the perfect phone based on their specific needs and preferences. Users can input the specifications they value most in a phone, and the AI-driven system analyzes mobile phone data to recommend the best possible phone matches for the user.",
+      bio: "A web-based application that assists users in finding the perfect phone based on their specific needs and preferences.",
       languages: <><SiPython /><SiHtml5/><SiCss3/><SiJavascript/><SiOpenai/></>,
     },
     {
@@ -66,14 +66,14 @@ const Projects = () => {
       images: [sudokuImg1, sudokuImg2],
       link: "https://github.com/jtaylor205/sudoku",
       screen: "Computer",
-      bio: "A Sudoku generator that creates boards based on chosen difficulty levels. Leveraging Pygame, users can sketch, delete, and submit answers as they attempt to solve the puzzle, providing an interactive and engaging experience.",
+      bio: "A Sudoku generator that creates boards based on chosen difficulty levels. Leveraging Pygame, users can sketch, delete, and submit answers as they attempt to solve the puzzle.",
       languages: <SiPython />,
     },
     {
       title: "File System",
       type: "Operating Systems",
       info: "No",
-      bio: "A userspace filesystem daemon using the FUSE API, designed to read from and write to WAD files. Also utilizesa C++ library for parsing and manipulating WAD file headers, descriptors, and lump data, enabling efficient data handling and manipulation within the filesystem.",
+      bio: "A userspace filesystem daemon using the FUSE API, designed to read from and write to WAD files. Also utilizes a C++ library for parsing and manipulating WAD file headers, descriptors, and lump data.",
       languages: <><SiCoursera/><SiCplusplus /><SiLinux/></>,
     },
     
@@ -88,7 +88,7 @@ const Projects = () => {
       title: "AVL Tree",
       type: "Data Structures",
       info: "No",
-      bio: "Implemented an AVL Tree in C++ that allows for insertion, deletion, and pre-order, in-order, and post-order traversal of nodes within the tree. The program also includes features such as balancing the tree, calculating the height of the tree, and finding the balance factor of each node.",
+      bio: "Implemented in C++ that allows for insertion, deletion, balancing, pre-order, in-order, and post-order traversal of nodes within the tree.",
       languages: <SiCplusplus />,
     },
   ];
