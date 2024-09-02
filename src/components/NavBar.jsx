@@ -13,6 +13,7 @@ const NavBar = ({ menuOpen, setMenuOpen, navigateButtonRef }) => {
   const location = useLocation();
 
   const navItems = [
+
     { title: "ABOUT", to: "/About" },
     { title: "PROJECTS", to: "/Projects" },
   ];
