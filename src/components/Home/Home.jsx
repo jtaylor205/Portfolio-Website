@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect} from 'react';
 import '../../css/Home.css';
 import homeDots from './homeDots';
 import Transition from '../transition';

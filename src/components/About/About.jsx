@@ -38,18 +38,21 @@ const About = () => {
   ], [skillItems]);
 
   useEffect(() => {
-    skillItems.forEach((item, index) => {
-      const timer = setTimeout(() => {
+    // Create an array to hold all the timers
+    const timers = skillItems.map((item, index) => {
+      return setTimeout(() => {
         setVisibleItems(prevVisibleItems => [...prevVisibleItems, index]);
       }, item.delay);
-      timersRef.current.push(timer);
     });
-
+  
+    // Store the timers in the ref
+    timersRef.current = timers;
+  
     // Cleanup timers on unmount to avoid memory leaks
     return () => {
       timersRef.current.forEach(timer => clearTimeout(timer));
     };
-  }, [skillItems]);
+  }, [skillItems]);  
 
   return (
     <>
