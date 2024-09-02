@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.4ee17e02.css",
-    "main.js": "/static/js/main.40c37bff.js",
+    "main.js": "/static/js/main.8b85a84c.js",
     "static/js/453.aac68abc.chunk.js": "/static/js/453.aac68abc.chunk.js",
     "static/media/phoneGuru2.png": "/static/media/phoneGuru2.5b7d17abb29e0ec79e76.png",
     "static/media/phoneGuru1.png": "/static/media/phoneGuru1.085f6bb21051e0dcd486.png",
@@ -27,11 +27,11 @@
     "static/media/resume.png": "/static/media/resume.23b83a817186334957d4.png",
     "index.html": "/index.html",
     "main.4ee17e02.css.map": "/static/css/main.4ee17e02.css.map",
-    "main.40c37bff.js.map": "/static/js/main.40c37bff.js.map",
+    "main.8b85a84c.js.map": "/static/js/main.8b85a84c.js.map",
     "453.aac68abc.chunk.js.map": "/static/js/453.aac68abc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4ee17e02.css",
-    "static/js/main.40c37bff.js"
+    "static/js/main.8b85a84c.js"
   ]
 }
