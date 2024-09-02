@@ -24,7 +24,7 @@ const SlideoverNav = ({ menuOpen, setMenuOpen }) => {
   ];
 
   const handleNavClick = (to) => {
-    sessionStorage.setItem('navigate', 'true'); // Mark the transition
+    sessionStorage.setItem('navigate', 'true'); 
     setMenuOpen(false); // Close the slideover nav
     navigate(to); // Navigate to the selected route
   };
