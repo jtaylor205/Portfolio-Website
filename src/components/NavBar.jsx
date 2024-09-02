@@ -49,7 +49,7 @@ const NavBar = ({ menuOpen, setMenuOpen, navigateButtonRef }) => {
   };
 
   return (
-    <div className={'nav-container'}>
+    <div className={'navbar-container'}>
       <div className={`nav-name-container`}>
         <div onClick={() => handleNavClick('/')}>
           <Link className="nav-name" to="/">

@@ -13,7 +13,7 @@ import guruImg2 from '../../assets/phoneGuru2.png';
 import solaceImg1 from '../../assets/solace1.png';
 import solaceImg2 from '../../assets/solace2.png';
 import solaceImg3 from '../../assets/solace3.png';
-import { SiCoursera, SiCplusplus, SiCss3, SiGooglegemini, SiHtml5, SiJavascript, SiOpenai, SiPython, SiReact, SiSwift, SiNumpy, SiGithub, SiIcloud, SiFirebase, SiLinux, SiSfml} from "react-icons/si";
+import { SiCplusplus, SiCss3, SiGooglegemini, SiHtml5, SiJavascript, SiOpenai, SiPython, SiReact, SiSwift, SiNumpy, SiGithub, SiIcloud, SiFirebase, SiLinux, SiSfml, SiC} from "react-icons/si";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -28,6 +28,7 @@ const Projects = () => {
       images: [solaceImg1, solaceImg2, solaceImg3],
       bio: "Mental Wellness Application harnessing the power of generative AI to empower users in achieving their daily goals, maintaining a personal journal, and engaging in meaningful conversations with an AI therapist.",
       languages: <><SiReact /><SiJavascript /><SiGooglegemini/><SiFirebase/></>,
+      delay: 1500,
     }, 
     {
       title: "Minesweeper",
@@ -38,6 +39,7 @@ const Projects = () => {
       screen: "Computer",
       bio: "The beloved puzzle game developed in C++ using the SFML library, featuring a built-in timer and a local leaderboard to track and celebrate your best times.",
       languages: <><SiCplusplus /><SiSfml/></>,
+      delay: 1750,
     },
     {
       title: "Food Fridge",
@@ -48,6 +50,7 @@ const Projects = () => {
       screen: "Mobile",
       bio: "A SwiftUI application where users can efficiently manage their food inventory by storing items in a 'Fridge', create recipes using ingredients from their fridge and easily generate shopping lists.",
       languages: <><SiIcloud /><SiSwift /></>,
+      delay: 2000,
     },
     {
       title: "Phone Guru",
@@ -58,6 +61,7 @@ const Projects = () => {
       screen: "Computer",
       bio: "A web-based application that assists users in finding the perfect phone based on their specific needs and preferences.",
       languages: <><SiPython /><SiHtml5/><SiCss3/><SiJavascript/><SiOpenai/></>,
+      delay: 2250,
     },
     {
       title: "Sudoku Generator",
@@ -68,13 +72,15 @@ const Projects = () => {
       screen: "Computer",
       bio: "A Sudoku generator that creates boards based on chosen difficulty levels. Leveraging Pygame, users can sketch, delete, and submit answers as they attempt to solve the puzzle.",
       languages: <SiPython />,
+      delay: 2500,
     },
     {
       title: "File System",
       type: "Operating Systems",
       info: "No",
       bio: "A userspace filesystem daemon using the FUSE API, designed to read from and write to WAD files. Also utilizes a C++ library for parsing and manipulating WAD file headers, descriptors, and lump data.",
-      languages: <><SiCoursera/><SiCplusplus /><SiLinux/></>,
+      languages: <><SiC/><SiCplusplus /><SiLinux/></>,
+      delay: 2750,
     },
     
     {
@@ -83,6 +89,7 @@ const Projects = () => {
       info: "No",
       bio: "Analyzed market data using financial indicators to identify trading opportunities. Implemented and optimized trading algorithms, using Python and libraries like Pandas, NumPy, and Backtest.py, to backtest historical data and refine effective trading strategies",
       languages: <><SiPython /><SiNumpy /></>,
+      delay: 3000,
     },
     {
       title: "AVL Tree",
@@ -90,6 +97,7 @@ const Projects = () => {
       info: "No",
       bio: "Implemented in C++ that allows for insertion, deletion, balancing, pre-order, in-order, and post-order traversal of nodes within the tree.",
       languages: <SiCplusplus />,
+      delay: 3250,
     },
   ];
 
@@ -104,12 +112,18 @@ const Projects = () => {
   return (
     <>
       <div className='projects-header'>My Projects</div>
+      <div className='projects-description'>
+        <p>Below is a collection of some of the projects I've worked on throughout my personal and academic career.</p>
+        <p>Click on a project to learn more. Clicking on the GitHub logo will redirect you to the repository for each project.</p>
+
+      </div>
       <div className='projects-grid'>
         {projectList.map((project, index) => (
           <div 
             key={index} 
             className='project-box' 
             onClick={() => handleCardClick(project)}
+            style={{ '--animation-delay': `${project.delay}ms` }}
           >
             <div className='project-title'>{project.title}</div>
             <div className='project-type'>{project.type}</div>
@@ -132,7 +146,7 @@ const Projects = () => {
             {selectedProject.images && (
               <div className='project-images'>
                 {selectedProject.images.map((image, index) => (
-                  <img key={index} src={image} alt={`${selectedProject.title} screenshot ${index + 1}`} className= {selectedProject.screen == 'Mobile' ? 'project-image-mobile' : 'project-image-computer'} />
+                  <img key={index} src={image} alt={`${selectedProject.title} screenshot ${index + 1}`} className= {selectedProject.screen === 'Mobile' ? 'project-image-mobile' : 'project-image-computer'} />
                 ))}
               </div>
             )}

@@ -1,13 +1,7 @@
-.nav-container {
-  position: fixed; 
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between; 
-  align-items: flex-start; 
-  z-index: 1;
-  width: 100%;
+html, body {
+  overscroll-behavior: none;
 }
+
 .nav-name-container {
   flex-grow: 1;
   left: 0;
@@ -43,6 +37,16 @@
   font-family: 'Arial', sans-serif;
 }
 
+.navbar-container {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start; 
+  z-index: 1;
+  width: 100%;
+}
 
 .link-logo {
   padding-top: 2vw;
