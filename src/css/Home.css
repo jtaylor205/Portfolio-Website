@@ -70,17 +70,21 @@ html, body {
     justify-content: center;  
     align-items: center;     
     background-color: rgba(26, 26, 26, 0.6);
-    border: 2px solid #ff4d5a;
+    background: linear-gradient(71deg, #080509, #1a171c, #080509);
+    border: 2px solid transparent;
     border-radius: 5px;
-    color: #ff4d5a;
+    color: #C0C0C0; /* Metallic gray color */
     font-size: 2.4rem;
     font-weight: 500;
     cursor: pointer;
     transition: transform 0.3s ease-out;
     opacity: 0;
     margin-top: 10%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(255, 255, 255, 0.2);
     animation: fadeUp 1.5s ease-in forwards;
     animation-delay: 3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .navigate-button:hover{

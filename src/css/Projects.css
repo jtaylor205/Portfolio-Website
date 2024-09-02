@@ -25,8 +25,7 @@ body {
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  background: linear-gradient(90deg, transparent, #333, transparent);
-  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+
   z-index: 10; /* Ensure it's above other content */
   animation: openFromMiddle 1s ease-out forwards;
 }
