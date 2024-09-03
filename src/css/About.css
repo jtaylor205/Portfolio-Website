@@ -91,19 +91,20 @@ body, html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90px;
-  width: 145px;
-  border: double 3px transparent;
-  border-image-slice: 1;
-  border-width: 3px;
-  background-image: linear-gradient(#1a1a1a, #1a1a1a), radial-gradient(circle at top left, #51a2e9, #ff4d5a);
+  height: 100px;
+  width: 150px;
+  background-color: rgba(26, 26, 26, 0.6);
+  background: linear-gradient(71deg, #080509, #1a171c, #080509);
+  border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 10px;
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-  overflow: hidden;
+  color: #C0C0C0;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 1.5s ease-in-out;
   opacity: 0;
   margin-left: 2rem;
-  transition: opacity 1.5s ease-in-out, transform 0.3s ease-out, height 0.3s ease-out;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 /* Visibility class for skill items */

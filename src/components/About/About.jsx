@@ -21,7 +21,7 @@ const About = () => {
   const skillItems = useMemo(() => [
     { title: "C++", image: cppImg, alt: "C++", delay: 1350 },
     { title: "CSS", image: cssImg, alt: "CSS", delay: 1875 },
-    { title: "HTML", image: htmlImg, alt: "HTML", delay: 3625 },
+    { title: "HTML", image: htmlImg, alt: "HTML", delay: 3225 },
     { title: "JAVASCRIPT", image: jsImg, alt: "JAVASCRIPT", delay: 1500 },
     { title: "PYTHON", image: pythonImg, alt: "PYTHON", delay: 3350 },
     { title: "REACT", image: reactImg, alt: "REACT", delay: 2700 },
