@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.2b7a55ce.css",
-    "main.js": "/static/js/main.db6da378.js",
+    "main.css": "/static/css/main.0f1559c0.css",
+    "main.js": "/static/js/main.f5129f2b.js",
     "static/js/453.aac68abc.chunk.js": "/static/js/453.aac68abc.chunk.js",
     "static/media/phoneGuru2.png": "/static/media/phoneGuru2.5b7d17abb29e0ec79e76.png",
     "static/media/phoneGuru1.png": "/static/media/phoneGuru1.085f6bb21051e0dcd486.png",
@@ -22,18 +22,19 @@
     "static/media/sql.png": "/static/media/sql.a642d9c8f5570440b67b.png",
     "static/media/swift.png": "/static/media/swift.445c1ee2426272a824f6.png",
     "static/media/python.png": "/static/media/python.a851bc4291951c3cdccc.png",
+    "static/media/Aquire-BW0ox.otf": "/static/media/Aquire-BW0ox.a37a828dd20a35dc68d2.otf",
     "static/media/swiftui.png": "/static/media/swiftui.5552e2a274596073939f.png",
     "static/media/html.png": "/static/media/html.2d389cbd36051fd86101.png",
     "static/media/AquireBold-8Ma60.otf": "/static/media/AquireBold-8Ma60.cfc5ce07bacb3e5972c3.otf",
     "static/media/AquireLight-YzE0o.otf": "/static/media/AquireLight-YzE0o.03035c58e93951e8d152.otf",
     "static/media/resume.png": "/static/media/resume.23b83a817186334957d4.png",
     "index.html": "/index.html",
-    "main.2b7a55ce.css.map": "/static/css/main.2b7a55ce.css.map",
-    "main.db6da378.js.map": "/static/js/main.db6da378.js.map",
+    "main.0f1559c0.css.map": "/static/css/main.0f1559c0.css.map",
+    "main.f5129f2b.js.map": "/static/js/main.f5129f2b.js.map",
     "453.aac68abc.chunk.js.map": "/static/js/453.aac68abc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b7a55ce.css",
-    "static/js/main.db6da378.js"
+    "static/css/main.0f1559c0.css",
+    "static/js/main.f5129f2b.js"
   ]
 }

@@ -11,3 +11,10 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Aquire';
+    src: url('/Aquire-BW0ox.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}

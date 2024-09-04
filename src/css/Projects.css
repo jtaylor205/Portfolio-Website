@@ -79,6 +79,16 @@ body {
   color: #6e5494; 
 }
 
+@keyframes fadeUp{
+  from{
+      opacity: 0;
+      margin-top: 5%
+  }
+  to {
+      opacity: 1;
+      margin-top: 1%;
+  }
+}
 .project-box {
   max-width: 550px;
   border: 0;
@@ -91,10 +101,11 @@ body {
   border-radius: 45px;
   padding: 40px;
   cursor: pointer;
+  margin-top: 5%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
-  animation: fadeIn 1s ease forwards;
-  animation-delay: var(--animation-delay);
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 2s;
 }
 
 .project-box:hover {
@@ -103,6 +114,7 @@ body {
 }
 
 .project-title {
+  font-family: 'Arial', sans-serif;
   font-weight: 600;
   color: white;
   letter-spacing: -0.02em;
@@ -113,6 +125,7 @@ body {
 }
 
 .project-type {
+  font-family: 'AquireLight', sans-serif;
   font-weight: 600;
   line-height: 32px;
   color: hsla(0, 0%, 100%, 0.5);
@@ -199,6 +212,7 @@ body {
 }
 
 .modal-content {
+  font-family: 'Arial', sans-serif;
   background-color: #080509;
   padding: 40px;
   border-radius: 20px;

@@ -1,18 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import gsap from 'gsap';
+import FontFaceObserver from 'fontfaceobserver';
 
 const PushUpWord = ({ word, alternate, wordClass, letterClass }) => {
   const [letters, setLetters] = useState([]);
+  const [fontLoaded, setFontLoaded] = useState(false);
+
 
   useEffect(() => {
-    // When the component mounts, split the word into letters and create spans for them
-    setLetters(
-      word.split('').map((char, index) => ({
-        char,
-        ref: React.createRef(),
-      }))
-    );
-  }, [word]);
+    const font = new FontFaceObserver('Aquire');
+    font.load().then(() => {
+      setFontLoaded(true);
+    }).catch((e) => {
+      console.error('Font loading failed', e);
+      setFontLoaded(true); // Proceed anyway to avoid blocking render
+    });
+  }, []);
+  useEffect(() => {
+    if (fontLoaded) {
+      setLetters(
+        word.split('').map((char, index) => ({
+          char,
+          ref: React.createRef(),
+        }))
+      );
+    }
+  }, [word, fontLoaded]);
 
   useEffect(() => {
     if (letters.length === 0) return;
@@ -60,7 +73,7 @@ const PushUpWord = ({ word, alternate, wordClass, letterClass }) => {
         timeline.kill(); // Clear GSAP timelines
       });
     };
-  }, [letters, alternate]); // Include `letters` and `alternate` in the dependency array
+  }, [letters, alternate, fontLoaded]); // Include `letters`, `alternate`, and `fontLoaded` in the dependency array
 
   return (
     <div className={wordClass} style={{ overflow: 'hidden' }}>

@@ -23,7 +23,7 @@ html, body {
   white-space: nowrap;
   color: #c9c9c9;
   font-size: 1vw;
-  font-family: 'Arial', sans-serif;
+  font-family: 'AquireLight', sans-serif;
   margin-left: 3vw;
   position: relative; 
   display: inline-block;
@@ -34,7 +34,7 @@ html, body {
   position: absolute; 
   color: #c9c9c9;
   font-size: 1vw;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Aquire', sans-serif;
 }
 
 .navbar-container {

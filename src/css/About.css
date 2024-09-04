@@ -41,6 +41,7 @@ body, html {
 
 /* Styling for the description container */
 .description-container {
+  font-family: 'Arial', sans-serif;
   width: 50%;
   display: flex;
   justify-content: center;

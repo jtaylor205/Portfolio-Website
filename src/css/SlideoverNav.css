@@ -25,7 +25,6 @@
   .slideover-tab {
     padding-left: 1vw;
     color: black;
-    font-family: 'Arial', sans-serif;
     padding-top: 1vw;
     position: relative; 
     overflow: hidden; 
@@ -35,7 +34,10 @@
     display: inline-block;
     color: #000000;
     font-size: 6vw;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Aquire', sans-serif;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    position: relative;
   }
   
   .slideover-links-container {
@@ -54,7 +56,7 @@
     height: 70%;
     padding: 1vw;
     color: black;
-    font-family: 'Arial', sans-serif;
+    font-family: 'AquireLight', sans-serif;
     font-size: 1vw;
     transition: color 0.3s ease; 
     cursor: pointer; 
