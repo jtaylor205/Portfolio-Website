@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.df46c6c7.css",
-    "main.js": "/static/js/main.dab87b15.js",
+    "main.css": "/static/css/main.c31d37f0.css",
+    "main.js": "/static/js/main.db6da378.js",
     "static/js/453.aac68abc.chunk.js": "/static/js/453.aac68abc.chunk.js",
     "static/media/phoneGuru2.png": "/static/media/phoneGuru2.5b7d17abb29e0ec79e76.png",
     "static/media/phoneGuru1.png": "/static/media/phoneGuru1.085f6bb21051e0dcd486.png",
@@ -16,7 +16,7 @@
     "static/media/foodFridge2.png": "/static/media/foodFridge2.47b1ef196fc04670bc69.png",
     "static/media/c++.png": "/static/media/c++.6d65ee64ea32bff47dbd.png",
     "static/media/solace3.png": "/static/media/solace3.32b3135cadc0782d7011.png",
-    "static/media/resume.pdf": "/static/media/resume.628848327d9e0b6a1441.pdf",
+    "static/media/resume.pdf": "/static/media/resume.d025d639fb8e10085def.pdf",
     "static/media/minesweeper1.png": "/static/media/minesweeper1.0d6f087083c42e74600c.png",
     "static/media/jaedon.jpg": "/static/media/jaedon.24dd7e29eb3431d75021.jpg",
     "static/media/sql.png": "/static/media/sql.a642d9c8f5570440b67b.png",
@@ -26,12 +26,12 @@
     "static/media/html.png": "/static/media/html.2d389cbd36051fd86101.png",
     "static/media/resume.png": "/static/media/resume.23b83a817186334957d4.png",
     "index.html": "/index.html",
-    "main.df46c6c7.css.map": "/static/css/main.df46c6c7.css.map",
-    "main.dab87b15.js.map": "/static/js/main.dab87b15.js.map",
+    "main.c31d37f0.css.map": "/static/css/main.c31d37f0.css.map",
+    "main.db6da378.js.map": "/static/js/main.db6da378.js.map",
     "453.aac68abc.chunk.js.map": "/static/js/453.aac68abc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.df46c6c7.css",
-    "static/js/main.dab87b15.js"
+    "static/css/main.c31d37f0.css",
+    "static/js/main.db6da378.js"
   ]
 }
