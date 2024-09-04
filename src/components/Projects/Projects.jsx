@@ -21,7 +21,7 @@ const Projects = () => {
   const projectList = [
     {
       title: "Solace",
-      type: "Mobile App/AI",
+      type: "Mobile App / AI",
       info: "Yes",
       link: "https://github.com/jtaylor205/solace",
       screen: "Mobile",
@@ -51,12 +51,12 @@ const Projects = () => {
     },
     {
       title: "Phone Guru",
-      type: "Web Development/AI",
+      type: "Web Development / AI",
       info: "Yes",
       link: "https://github.com/jtaylor205/verizon-hack",
       images: [guruImg1, guruImg2],
       screen: "Computer",
-      bio: "A web-based application that assists users in finding the perfect phone based on their specific needs and preferences.",
+      bio: "A web-based application that assists users in finding the perfect phone. Utilizing AI, phone guru analyzes user preferences and provides personalized recommendations, guaranteeing the best possible phone for the user.",
       languages: <><SiPython /><SiHtml5/><SiCss3/><SiJavascript/><SiOpenai/></>,
     },
     {
