@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.37df49b1.css",
+    "main.css": "/static/css/main.2b7a55ce.css",
     "main.js": "/static/js/main.db6da378.js",
     "static/js/453.aac68abc.chunk.js": "/static/js/453.aac68abc.chunk.js",
     "static/media/phoneGuru2.png": "/static/media/phoneGuru2.5b7d17abb29e0ec79e76.png",
@@ -28,12 +28,12 @@
     "static/media/AquireLight-YzE0o.otf": "/static/media/AquireLight-YzE0o.03035c58e93951e8d152.otf",
     "static/media/resume.png": "/static/media/resume.23b83a817186334957d4.png",
     "index.html": "/index.html",
-    "main.37df49b1.css.map": "/static/css/main.37df49b1.css.map",
+    "main.2b7a55ce.css.map": "/static/css/main.2b7a55ce.css.map",
     "main.db6da378.js.map": "/static/js/main.db6da378.js.map",
     "453.aac68abc.chunk.js.map": "/static/js/453.aac68abc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.37df49b1.css",
+    "static/css/main.2b7a55ce.css",
     "static/js/main.db6da378.js"
   ]
 }
