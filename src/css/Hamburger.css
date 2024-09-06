@@ -62,12 +62,14 @@
   }
   
 
-  @media (max-width: 767px){
+  @media (max-width: 768px){
     .hamburger {
-      width: 4vw; 
-      height: 4vw; 
+      width: 6vw; 
+      height: 6vw; 
       padding-right: 4vw;
       padding-top: 4vw;
     }
-    
+    .hamburger span {
+      height: 0.8vw;
+    }
   };

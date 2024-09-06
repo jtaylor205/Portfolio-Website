@@ -65,7 +65,7 @@ const homeDots = function () {
         };
     } else {
         dots = {
-            nb: 0,
+            nb: 150,  // Set a minimum number of dots
             distance: 0,
             d_radius: 0,
             array: [],
@@ -156,13 +156,14 @@ const homeDots = function () {
         for (let i = 0; i < dots.nb; i++) {
             dots.array.push(new Dot());
             var dot = dots.array[i];
-
             dot.create();
         }
-
-        dots.array[0].radius = 1.5;
-        dots.array[0].colour = '#51a2e9';
-
+    
+        if (dots.array.length > 0) {
+            dots.array[0].radius = 1.5;
+            dots.array[0].colour = '#51a2e9';
+        }
+    
         dot.line();
         dot.animate();
     }

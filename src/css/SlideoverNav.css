@@ -90,3 +90,25 @@
     color: #c9c9c9; 
   }
   
+  @media (max-width: 768px) {
+    .slideover-container {
+      width: 100%;
+      right: -100%;
+    }
+    .slideover-letter {
+      font-size: 15vw;
+      margin-top: 5vw;
+    }
+    .slideover-link {
+      font-size: 7vw;
+      margin-bottom: 10vw;
+      background: #353434;
+      color: #c9c9c9; 
+    }
+    .slideover-links-container{
+      flex-direction: column;
+    }
+    .slideover-container.open{
+      border-radius: 0;
+    }
+  }

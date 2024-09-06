@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../css/Projects.css';
 import Transition from '../transition';
 import mineSweepeerImg1 from '../../assets/minesweeper1.png';
@@ -14,6 +14,15 @@ import solaceImg1 from '../../assets/solace1.png';
 import solaceImg2 from '../../assets/solace2.png';
 import solaceImg3 from '../../assets/solace3.png';
 import { SiCplusplus, SiCss3, SiGooglegemini, SiHtml5, SiJavascript, SiOpenai, SiPython, SiReact, SiSwift, SiNumpy, SiGithub, SiIcloud, SiFirebase, SiLinux, SiSfml, SiC} from "react-icons/si";
+
+const preloadImage = (src) => {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = resolve;
+    img.onerror = reject;
+    img.src = src;
+  });
+};
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -92,6 +101,17 @@ const Projects = () => {
       languages: <SiCplusplus />,
     },
   ];
+
+  useEffect(() => {
+    const preloadAllImages = async () => {
+      const imagePromises = projectList.flatMap(project => 
+        project.images ? project.images.map(preloadImage) : []
+      );
+      await Promise.all(imagePromises);
+    };
+
+    preloadAllImages();
+  }, []);
 
   const handleCardClick = (project) => {
     setSelectedProject(project);

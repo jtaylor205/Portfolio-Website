@@ -73,3 +73,23 @@ html, body {
   padding-left: 38vw;
   font-weight: bold;
 }
+
+@media (max-width: 768px) {
+  .nav-item {
+    font-size: 5vw;
+  }
+  .letter {
+    font-size: 5vw;
+  }
+  .nav-name {
+    font-size: 10vw;
+  }
+  .nav-list{
+    margin-left: 5vw;
+    padding-left: 10vw;
+    margin-top: 5vw;
+  }
+  .nav-name{
+    margin-right: 0;
+  }
+}
