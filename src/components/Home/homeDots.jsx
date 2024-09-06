@@ -2,11 +2,11 @@ const homeDots = function () {
     const canvas = document.querySelector('canvas'),
         ctx = canvas.getContext('2d'),
         colorDot = [
-            'rgb(81, 162, 233)',
-            'rgb(81, 162, 233)',
-            'rgb(81, 162, 233)',
-            'rgb(81, 162, 233)',
-            'rgb(255, 77, 90)',
+            'rgb(0, 0, 204)',
+            'rgb(0, 0, 204)',
+            'rgb(255, 128, 0)',
+            'rgb(0, 0, 204)',
+            'rgb(255, 128, 0)',
         ];
 
     function resizeCanvas() {
@@ -65,7 +65,7 @@ const homeDots = function () {
         };
     } else {
         dots = {
-            nb: 150,  // Set a minimum number of dots
+            nb: 200,  
             distance: 0,
             d_radius: 0,
             array: [],
@@ -85,12 +85,17 @@ const homeDots = function () {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
 
-        const dotDistance = Math.sqrt(
-            (this.x - mousePosition.x) ** 2 + (this.y - mousePosition.y) ** 2
-        );
-        const distanceRatio = dotDistance / (windowSize / 1.7);
-
-        ctx.fillStyle = this.colour.slice(0, -1) + `,${1 - distanceRatio})`;
+        if (window.innerWidth <= 800) {
+            // For small screens, always show dots at full opacity
+            ctx.fillStyle = this.colour;
+        } else {
+            // For larger screens, keep the existing behavior
+            const dotDistance = Math.sqrt(
+                (this.x - mousePosition.x) ** 2 + (this.y - mousePosition.y) ** 2
+            );
+            const distanceRatio = dotDistance / (windowSize / 1.7);
+            ctx.fillStyle = this.colour.slice(0, -1) + `,${1 - distanceRatio})`;
+        }
         ctx.fill();
     };
 

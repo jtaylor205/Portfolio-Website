@@ -2,11 +2,10 @@ import React, { useEffect} from 'react';
 import '../../css/Home.css';
 import homeDots from './homeDots';
 import Transition from '../transition';
-import githubImg from '../../assets/github.png';
-import linkedinImg from '../../assets/linkedin.png';
-import resumeImg from '../../assets/resume.png';
 import { RandomReveal } from 'react-random-reveal';
 import resumePDF from '../../assets/resume.pdf';
+import {SiLinkedin, SiGithub, SiFiles} from "react-icons/si";
+import { FaRegFile } from "react-icons/fa";
 
 const Home = ({menuOpen, setMenuOpen, navigateButtonRef }) => {
   useEffect(() => {
@@ -17,9 +16,9 @@ const Home = ({menuOpen, setMenuOpen, navigateButtonRef }) => {
   }, []);
 
   const linkItems = [
-    { title: "LINKEDIN", link: 'https://www.linkedin.com/in/jaedon-taylor/', imgSrc: linkedinImg, alt: "Linkedin" },
-    { title: "GITHUB", link: 'https://github.com/jtaylor205', imgSrc: githubImg, alt: "Github" },
-    { title: "RESUME", link: resumePDF, imgSrc: resumeImg, alt: "Resume", isDownload: true }, 
+    { title: "LINKEDIN", link: 'https://www.linkedin.com/in/jaedon-taylor/', imgSrc: <SiLinkedin/>, alt: "Linkedin" },
+    { title: "GITHUB", link: 'https://github.com/jtaylor205', imgSrc: <SiGithub/>, alt: "Github" },
+    { title: "RESUME", link: resumePDF, imgSrc: <FaRegFile/>, alt: "Resume", isDownload: true }, 
   ];
 
   const handleLinkClick = (link, isDownload) => {
@@ -62,11 +61,9 @@ const Home = ({menuOpen, setMenuOpen, navigateButtonRef }) => {
             key={index}
             onClick={() => handleLinkClick(item.link, item.isDownload)} 
           >
-            <img 
-              className={`button-image ${item.title === 'RESUME' ? 'small-resume' : ''}`}  // Apply 'small-resume' class if index is 2
-              src={item.imgSrc} 
-              alt={item.alt} 
-            />
+            <div className={`bottom-button`}>
+              {item.imgSrc}
+            </div>
           </a>
         ))}
       </div>

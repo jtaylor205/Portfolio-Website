@@ -101,14 +101,11 @@
     }
     .slideover-link {
       font-size: 7vw;
+      font-family: 'Aquire', sans-serif;
       margin-bottom: 10vw;
-      background: #353434;
-      color: #c9c9c9; 
-    }
+      padding: 2vw;
+      }
     .slideover-links-container{
       flex-direction: column;
-    }
-    .slideover-container.open{
-      border-radius: 0;
     }
   }
