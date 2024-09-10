@@ -271,19 +271,21 @@ body {
 }
 
 .project-image-computer {
-  width: 20vw; /* Adjust the width to a larger size */
+  width: 20vw; 
   height: auto;
-  border-radius: 15px; /* Rounded corners */
+  border-radius: 15px; 
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  animation: float 3s ease-in-out infinite; /* Add floating animation */
+  animation: float 3s ease-in-out infinite;
+  cursor: pointer;
 }
 
 .project-image-mobile {
-  width: 10vw; /* Adjust the width to a larger size */
+  width: 10vw; 
   height: auto;
-  border-radius: 15px; /* Rounded corners */
+  border-radius: 15px; 
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  animation: float 3s ease-in-out infinite; /* Add floating animation */
+  animation: float 3s ease-in-out infinite; 
+  cursor: pointer;
 }
 
 @keyframes float {
