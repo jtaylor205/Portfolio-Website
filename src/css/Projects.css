@@ -55,16 +55,6 @@ body {
   gap:1vw;
 }
 
-@media screen and (max-width: 991px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-  .projects-header {
-    font-size: 3rem; /* Reduced font size for smaller screens */
-    margin-top: 5rem; /* Adjusted margin for smaller screens */
-    top: 5rem;
-  }
-}
 
 .github-link {
   position: absolute;
@@ -240,6 +230,39 @@ body {
   color: #ff4d5a;
 }
 
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  animation: slideDownFadeIn 0.5s ease forwards;
+}
+
+.image-content-computer {
+  position: relative;
+  width: 40vw; /* Adjust the width to a larger size */
+  height: auto;
+  border-radius: 15px;
+}
+
+
+.image-content-mobile {
+  position: relative;
+  width: 20vw; 
+  height: auto;
+  border-radius: 15px;
+}
+
+.image-close:hover {
+  color: #ff4d5a;
+}
+
 .project-images {
   display: flex;
   justify-content: center;
@@ -293,3 +316,38 @@ body {
     transform: translateY(0);
   }
 }
+
+@keyframes slideUpFadeOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}
+
+.modal-overlay.closing,
+.image-overlay.closing {
+  animation: slideUpFadeOut 0.5s ease forwards;
+}
+
+@media screen and (max-width: 991px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .projects-header {
+    font-size: 3rem; /* Reduced font size for smaller screens */
+    margin-top: 5rem; /* Adjusted margin for smaller screens */
+    top: 5rem;
+  }
+  .image-content-mobile {
+    width: 50vw;
+  }
+  .image-content-computer {
+    width: 70vw;
+  }
+}
+
+

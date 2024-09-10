@@ -26,7 +26,7 @@ const preloadImage = (src) => {
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
-
+  const [selectedImage, setSelectedImage] = useState(null);
   const projectList = [
     {
       title: "Solace",
@@ -118,7 +118,25 @@ const Projects = () => {
   };
 
   const handleModalClose = () => {
-    setSelectedProject(null);
+    const modalOverlay = document.querySelector('.modal-overlay');
+    modalOverlay.classList.add('closing');
+    setTimeout(() => {
+      setSelectedProject(null);
+      modalOverlay.classList.remove('closing');
+    }, 500);
+  };
+
+  const handleImageClose = () => {
+    const imageOverlay = document.querySelector('.image-overlay');
+    if (imageOverlay) {
+      imageOverlay.classList.add('closing');
+      setTimeout(() => {
+        setSelectedImage(null);
+        if (imageOverlay) {
+          imageOverlay.classList.remove('closing');
+        }
+      }, 500);
+    }
   };
 
   return (
@@ -156,7 +174,9 @@ const Projects = () => {
             {selectedProject.images && (
               <div className='project-images'>
                 {selectedProject.images.map((image, index) => (
-                  <img key={index} src={image} alt={`${selectedProject.title} screenshot ${index + 1}`} className= {selectedProject.screen === 'Mobile' ? 'project-image-mobile' : 'project-image-computer'} />
+                  <img key={index} src={image} alt={`${selectedProject.title} screenshot ${index + 1}`} 
+                  className= {selectedProject.screen === 'Mobile' ? 'project-image-mobile' : 'project-image-computer'}
+                  onClick={() => setSelectedImage(image)} />
                 ))}
               </div>
             )}
@@ -167,6 +187,14 @@ const Projects = () => {
                 <SiGithub size={40} />
               </a>
             )}
+          </div>
+        </div>
+      )}
+
+       {selectedImage && (
+        <div className="image-overlay" onClick={handleImageClose}>
+          <div className="image-content" onClick={(e) => e.stopPropagation()}>
+            <img src={selectedImage} alt="Selected Project Screenshot" className={selectedProject.screen === 'Mobile' ? 'image-content-mobile' : 'image-content-computer'}/>
           </div>
         </div>
       )}
