@@ -41,7 +41,7 @@ body, html {
 
 /* Styling for the description container */
 .description-container {
-  font-family: 'Arial', sans-serif;
+  font-family: "IBM Plex Mono", monospace;
   width: 50%;
   display: flex;
   justify-content: center;
