@@ -1,10 +1,6 @@
-/* Global CSS to prevent horizontal scrolling */
-body, html {
-  margin: 0;
-  padding: 0;
-  overflow: hidden; /* Prevents scrolling due to unintended overflow */
+html, body {
+  overflow-x: hidden;
 }
-
 /* About header styling */
 .about-header {
   font-size: 5rem;
@@ -22,7 +18,7 @@ body, html {
 .about-container {
   display: flex;
   flex-direction: row;
-  margin-bottom: 12rem;
+  margin-bottom: 5rem;
   max-width: 100vw; /* Prevents overflow */
   padding-right: 2rem; /* Added padding to allow for hover scaling */
   overflow: hidden; /* Prevent scrolling */
@@ -193,4 +189,5 @@ body, html {
   .skills_item:not(:last-child) {
     margin-bottom: 1rem;
   }
+
 }
