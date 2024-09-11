@@ -31,7 +31,7 @@ body {
 }
 
 .projects-description {
-  font-family: 'Poppins', sans-serif;
+  font-family: "IBM Plex Mono", monospace;
   top: 5rem;
   text-align: center;
   color: #ffffff;
@@ -104,7 +104,7 @@ body {
 }
 
 .project-title {
-  font-family: 'Arial', sans-serif;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: 600;
   color: white;
   letter-spacing: -0.02em;

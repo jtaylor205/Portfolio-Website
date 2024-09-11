@@ -2,53 +2,40 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import '../../css/About.css';
 import Transition from '../transition';
 import TypingEffect from './TypingEffect';
-import cppImg from '../../assets/c++.png';
-import htmlImg from '../../assets/html.png';
-import gitImg from '../../assets/git.png';
-import cssImg from '../../assets/css.png';
-import sqlImg from '../../assets/sql.png';
-import swiftImg from '../../assets/swift.png';
-import swiftUIImg from '../../assets/swiftui.png';
-import reactImg from '../../assets/reactjs.png';
-import pythonImg from '../../assets/python.png';
-import jsImg from '../../assets/javascript.png';
 import Jaedon from '../../assets/jaedon.jpg';
+import { SiCplusplus, SiCss3, SiHtml5, SiJavascript, SiPython, SiReact, SiSwift, SiGit, SiMysql } from "react-icons/si";
 
 const About = () => {
   const [visibleItems, setVisibleItems] = useState([]);
-  const timersRef = useRef([]); // Store timers to clear them later
+  const timersRef = useRef([]);
 
   const skillItems = useMemo(() => [
-    { title: "C++", image: cppImg, alt: "C++", delay: 1350 },
-    { title: "CSS", image: cssImg, alt: "CSS", delay: 1875 },
-    { title: "HTML", image: htmlImg, alt: "HTML", delay: 3225 },
-    { title: "JAVASCRIPT", image: jsImg, alt: "JAVASCRIPT", delay: 1500 },
-    { title: "PYTHON", image: pythonImg, alt: "PYTHON", delay: 3350 },
-    { title: "REACT", image: reactImg, alt: "REACT", delay: 2700 },
-    { title: "GIT", image: gitImg, alt: "GIT", delay: 1425 },
-    { title: "SQL", image: sqlImg, alt: "SQL", delay: 2425 },
-    { title: "SWIFT", image: swiftImg, alt: "SWIFT", delay: 2150 },
-    { title: "SWIFTUI", image: swiftUIImg, alt: "SWIFTUI", delay: 3075 },
+    { title: "C++", icon: SiCplusplus, alt: "C++", delay: 1350 },
+    { title: "CSS", icon: SiCss3, alt: "CSS", delay: 1875 },
+    { title: "HTML", icon: SiHtml5, alt: "HTML", delay: 3225 },
+    { title: "JAVASCRIPT", icon: SiJavascript, alt: "JAVASCRIPT", delay: 1500 },
+    { title: "PYTHON", icon: SiPython, alt: "PYTHON", delay: 3350 },
+    { title: "REACT", icon: SiReact, alt: "REACT", delay: 2700 },
+    { title: "GIT", icon: SiGit, alt: "GIT", delay: 1425 },
+    { title: "SQL / MYSQL", icon: SiMysql, alt: "SQL / MYSQL", delay: 2425 },
+    { title: "SWIFT", icon: SiSwift, alt: "SWIFT", delay: 2150 },
   ], []);
 
   const chunkedSkills = useMemo(() => [
     skillItems.slice(0, 3),
-    skillItems.slice(3, 7),
-    skillItems.slice(7, 10),
+    skillItems.slice(3, 6),
+    skillItems.slice(6, 9),
   ], [skillItems]);
 
   useEffect(() => {
-    // Create an array to hold all the timers
     const timers = skillItems.map((item, index) => {
       return setTimeout(() => {
         setVisibleItems(prevVisibleItems => [...prevVisibleItems, index]);
       }, item.delay);
     });
   
-    // Store the timers in the ref
     timersRef.current = timers;
   
-    // Cleanup timers on unmount to avoid memory leaks
     return () => {
       timersRef.current.forEach(timer => clearTimeout(timer));
     };
@@ -78,7 +65,7 @@ const About = () => {
                   key={index}
                   style={{ transitionDelay: `${skill.delay}ms, transform 0ms` }}
                 >
-                  <img src={skill.image} alt={skill.alt} />
+                  <skill.icon className="skill_icon" alt={skill.alt} />
                   <div className="skill_name">{skill.title}</div>
                 </div>
               ))}
