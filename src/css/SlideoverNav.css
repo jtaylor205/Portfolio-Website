@@ -16,11 +16,12 @@
 
   
   
-  .slideover-tabs-container {
-    position: flex;
-    flex-direction: column;
-    margin-top: 3vw;
-  }
+.slideover-tabs-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3vw;
+}
+
   
   .slideover-tab {
     padding-left: 1vw;
@@ -105,7 +106,15 @@
       margin-bottom: 10vw;
       padding: 2vw;
       }
-    .slideover-links-container{
-      flex-direction: column;
-    }
+      .slideover-links-container {
+        position: relative; 
+        bottom: auto;     
+        margin-top: auto;  
+        flex-direction: column;
+      }
+      .slideover-container {
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;   /* Allow scrolling if content overflows */
+      }
   }
