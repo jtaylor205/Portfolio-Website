@@ -101,20 +101,26 @@
       margin-top: 5vw;
     }
     .slideover-link {
-      font-size: 7vw;
-      font-family: 'Aquire', sans-serif;
-      margin-bottom: 10vw;
-      padding: 2vw;
-      }
-      .slideover-links-container {
-        position: relative; 
-        bottom: auto;     
-        margin-top: auto;  
-        flex-direction: column;
-      }
-      .slideover-container {
-        display: flex;
-        flex-direction: column;
-        overflow-y: auto;   /* Allow scrolling if content overflows */
-      }
+      border: none;               
+      border-radius: 0;          
+      margin-left: 0;            
+      padding: 0;                 
+      font-size: 7vw;           
+      font-family: 'Aquire', sans-serif;  
+      color: black;             
+      display: block;              
+      text-align: left;           
+      margin-bottom: 5vw;     
+      cursor: pointer;            
+    }
+    .slideover-links-container {
+      position: relative; 
+      bottom: auto;     
+      margin-top: auto;  
+
+    }
+    .slideover-container {
+      display: flex;
+      flex-direction: column;
+    }
   }
