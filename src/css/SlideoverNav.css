@@ -1,14 +1,21 @@
 /* slideoverNav css */
 .slideover-container {
   position: fixed;
-  right: -36%; /* Move the container completely off-screen */
+  right: -36%; 
   width: 36%; 
   height: 100%;
-  background-color: #c9c9c9;
-  transition: right 0.8s ease; /* Transition the right property */
+  background: linear-gradient(145deg, #f7f7f7, #dcdcdc); /* Off-white to light grey gradient */
+  background: rgba(245, 245, 245, 0.9); /* Semi-transparent off-white */
+  backdrop-filter: blur(12px); /* Adds a blur effect to the background */
   border-radius: 20px;
+  box-shadow: 
+    0 4px 10px rgba(0, 0, 0, 0.2),  /* Outer shadow */
+    inset 0 2px 4px rgba(255, 255, 255, 0.8),  /* Inner white glow for glossiness */
+    inset 0 -4px 6px rgba(0, 0, 0, 0.1); /* Subtle inner shadow at the bottom */
+  transition: right 0.8s ease; /* Transition the right property */
   z-index: 20; 
 }
+
 
 .slideover-container.open {
   right: 0; /* Slide in the container */

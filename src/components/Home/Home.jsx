@@ -4,8 +4,9 @@ import homeDots from './homeDots';
 import Transition from '../transition';
 import { RandomReveal } from 'react-random-reveal';
 import resumePDF from '../../assets/resume.pdf';
-import {SiLinkedin, SiGithub, SiFiles} from "react-icons/si";
-import { FaRegFile } from "react-icons/fa";
+import {SiGithub} from "react-icons/si";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { BiSolidFile } from "react-icons/bi";
 
 const Home = ({menuOpen, setMenuOpen, navigateButtonRef }) => {
   useEffect(() => {
@@ -16,9 +17,9 @@ const Home = ({menuOpen, setMenuOpen, navigateButtonRef }) => {
   }, []);
 
   const linkItems = [
-    { title: "LINKEDIN", link: 'https://www.linkedin.com/in/jaedon-taylor/', imgSrc: <SiLinkedin/>, alt: "Linkedin" },
+    { title: "LINKEDIN", link: 'https://www.linkedin.com/in/jaedon-taylor/', imgSrc: <FaLinkedinIn/>, alt: "Linkedin" },
     { title: "GITHUB", link: 'https://github.com/jtaylor205', imgSrc: <SiGithub/>, alt: "Github" },
-    { title: "RESUME", link: resumePDF, imgSrc: <FaRegFile/>, alt: "Resume", isDownload: true }, 
+    { title: "RESUME", link: resumePDF, imgSrc: <BiSolidFile/>, alt: "Resume", isDownload: true }, 
   ];
 
   const handleLinkClick = (link, isDownload) => {

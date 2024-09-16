@@ -3,6 +3,7 @@ import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import './App.css';
 import NavBar from "./components/NavBar";
 import About from "./components/About/About";
+
 import Projects from './components/Projects/Projects';
 import Home from './components/Home/Home';
 import { AnimatePresence } from 'framer-motion';

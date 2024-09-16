@@ -2,11 +2,11 @@ const homeDots = function () {
     const canvas = document.querySelector('canvas'),
         ctx = canvas.getContext('2d'),
         colorDot = [
-            'rgb(0, 0, 204)',
-            'rgb(0, 0, 204)',
-            'rgb(255, 128, 0)',
-            'rgb(0, 0, 204)',
-            'rgb(255, 128, 0)',
+            'rgb(81, 162, 233)',
+            'rgb(81, 162, 233)',
+            'rgb(81, 162, 233)',
+            'rgb(81, 162, 233)',
+            'rgb(255, 77, 90)',
         ];
 
     function resizeCanvas() {
@@ -91,7 +91,7 @@ const homeDots = function () {
         } else {
             // For larger screens, keep the existing behavior
             const dotDistance = Math.sqrt(
-                (this.x - mousePosition.x) ** 2 + (this.y - mousePosition.y) ** 2
+                (this.x - mousePosition.x) ** 1.5 + (this.y - mousePosition.y) ** 1.5
             );
             const distanceRatio = dotDistance / (windowSize / 1.7);
             ctx.fillStyle = this.colour.slice(0, -1) + `,${1 - distanceRatio})`;

@@ -103,24 +103,25 @@ html, body {
   position: fixed;
   bottom: 2rem;
   left: 2rem;
-  opacity: 0; 
-  animation: fadeIn 2s ease-in forwards;
-  animation-delay: 2s;
+  gap: 1rem;
 }
 
 .bottom-button {
-  color: #fafafa;
-  width: 4vw; 
-  height: 4vw;
-  scale: 2.0;
-  margin-right: 1rem;
+  color: black;
+  width: 50px; 
+  height: 50px; 
+  background-color: #f1f1f1; 
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
 
-.small-resume {
-    width: 2.5rem;
+  .bottom-button svg {
+    font-size: 40px; /* Adjust the size as needed */
+    width: 30px;
+    height: 30px;
   }
 
 @keyframes fadeIn {
