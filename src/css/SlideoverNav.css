@@ -16,6 +16,53 @@
   z-index: 20; 
 }
 
+.info-header {
+  display: flex; 
+  align-items: center; 
+  gap: 10px; /* Adjust spacing between image and text */
+  margin-left: 15%;
+  margin-top: 10%;
+  padding: 20px; /* Add padding for better spacing inside the container */
+  width: fit-content;
+  position: relative; /* Needed for the pseudo-elements */
+  
+  /* Enhanced Glassmorphism effect */
+  background: rgba(36, 36, 36, 0.3); /* Slightly darker semi-transparent background */
+  border-radius: 25px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+  backdrop-filter: blur(15px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Slight border to define the glass effect */
+  overflow: hidden; /* Hide overflow of pseudo-elements */
+}
+
+.info-image {
+  width: 60px; 
+  height: 60px; 
+  border-radius: 50%;
+  object-fit: cover; 
+  border: 2px solid #000000; 
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column; 
+
+}
+
+.info-text .name {
+  font-weight: bold; 
+  color: black;
+  font-family: 'Aquire', sans-serif;
+  margin: 0; 
+}
+
+.info-text .email {
+  color: white;
+  font-family: 'AquireLight', sans-serif;
+  font-size: smaller;
+  margin: 0; 
+}
 
 .slideover-container.open {
   right: 0; /* Slide in the container */
@@ -26,7 +73,7 @@
 .slideover-tabs-container {
   display: flex;
   flex-direction: column;
-  margin-top: 3vw;
+  margin-top: 1vw;
 }
 
   

@@ -3,6 +3,8 @@ import '../css/SlideoverNav.css';
 import { useNavigate } from 'react-router-dom';
 import PushUpWord from './PushUpWord';
 import resumePDF from '../assets/resume.pdf';
+import Headshot from '../assets/headshot.jpeg';
+
 
 const SlideoverNav = ({ menuOpen, setMenuOpen }) => {
   const navigate = useNavigate();
@@ -45,9 +47,39 @@ const SlideoverNav = ({ menuOpen, setMenuOpen }) => {
       navigate(link); // Navigate to the internal route
     }
   };
+  
+    const infoHeader = document.querySelector('.info-header');
+    if (infoHeader) { // Check if the element exists
+      infoHeader.addEventListener('mousemove', (e) => {
+        const { width, height, left, top } = infoHeader.getBoundingClientRect();
+        const x = e.clientX - left - width / 2;
+        const y = e.clientY - top - height / 2;
+  
+        const rotateX = (y / height) * 20;
+        const rotateY = (x / width) * -20; 
+  
+        infoHeader.style.transition = 'none'; 
+        infoHeader.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+  
+      infoHeader.addEventListener('mouseleave', () => {
+        //Resets when mouse leaves
+        infoHeader.style.transition = 'transform 0.5s ease'; 
+        infoHeader.style.transform = `rotateX(0deg) rotateY(0deg)`;
+      });
+    }
+
+  
 
   return (
     <div className={`slideover-container ${menuOpen ? 'open' : ''}`}>
+      <div className="info-header">
+        <img className='info-image' src={Headshot} alt="Jaedon Taylor" />
+        <div className="info-text">
+          <p className="name">Jaedon Taylor</p>
+          <p className="email">JaedonATaylor@gmail.com</p>
+        </div>
+      </div>
       <div className="slideover-tabs-container">
         {navItems.map((item, index) => (
           <div key={index} onClick={() => handleNavClick(item.to)}>
