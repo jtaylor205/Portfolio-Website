@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/SlideoverNav.css';
 import { useNavigate } from 'react-router-dom';
 import PushUpWord from './PushUpWord';
@@ -8,7 +8,7 @@ import Headshot from '../assets/headshot.jpeg';
 
 const SlideoverNav = ({ menuOpen, setMenuOpen }) => {
   const navigate = useNavigate();
-
+  const [resizeTrigger, setResizeTrigger] = useState(0);
   const [linkHoverIndex, setLinkHoverIndex] = useState(-1);
   const handleLinkMouseEnter = (index) => setLinkHoverIndex(index);
   const handleLinkMouseLeave = () => setLinkHoverIndex(-1);
@@ -69,6 +69,16 @@ const SlideoverNav = ({ menuOpen, setMenuOpen }) => {
       });
     }
 
+    useEffect(() => {
+      const handleResize = () => {
+        setResizeTrigger(prev => prev + 1);
+      };
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+
   
 
   return (
@@ -77,7 +87,11 @@ const SlideoverNav = ({ menuOpen, setMenuOpen }) => {
         <img className='info-image' src={Headshot} alt="Jaedon Taylor" />
         <div className="info-text">
           <p className="name">Jaedon Taylor</p>
-          <p className="email">JaedonATaylor@gmail.com</p>
+          <p className="email">
+            <a href="mailto:JaedonATaylor@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>
+              JaedonATaylor@gmail.com
+            </a>
+          </p>
         </div>
       </div>
       <div className="slideover-tabs-container">
@@ -85,6 +99,7 @@ const SlideoverNav = ({ menuOpen, setMenuOpen }) => {
           <div key={index} onClick={() => handleNavClick(item.to)}>
             <div>
               <PushUpWord
+                key={resizeTrigger}
                 word={item.title}
                 alternate={false}
                 wordClass={'slideover-tab'}

@@ -20,10 +20,9 @@
   display: flex; 
   align-items: center; 
   gap: 10px; /* Adjust spacing between image and text */
-  margin-left: 15%;
-  margin-top: 10%;
+  margin: 10% auto;
   padding: 20px; /* Add padding for better spacing inside the container */
-  width: fit-content;
+  width: 70%;
   position: relative; /* Needed for the pseudo-elements */
   
   /* Enhanced Glassmorphism effect */
@@ -81,8 +80,6 @@
     padding-left: 1vw;
     color: black;
     padding-top: 1vw;
-    position: relative; 
-    overflow: hidden; 
   }
   
   .slideover-letter {
@@ -92,7 +89,7 @@
     font-family: 'Aquire', sans-serif;
     line-height: 1;
     letter-spacing: 0.03em;
-    position: relative;
+
   }
   
   .slideover-links-container {
@@ -143,6 +140,16 @@
   
   .slideover-link.hover {
     color: #c9c9c9; 
+  }
+
+  @media (max-width: 1300px) {
+    .info-text .name{
+      font-size: medium;
+    }
+    .info-text .email {
+      font-size: x-small;
+    }
+
   }
   
   @media (max-width: 768px) {

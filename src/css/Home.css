@@ -68,34 +68,39 @@ html, body {
     animation-delay: 2.5s;
   }
 
-.navigate-button {
-    width:20%;
+  .navigate-button-container{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .navigate-button {
+    margin-top: 5%;
+    width: 7vw;
+    font-size: 1.5vw;
+    background: rgba(245, 245, 245, 1.0);
+    border-radius: 40px;
+    height: 40%;
+    color: black;
     position: relative;
     display: flex;
     justify-content: center;  
     align-items: center;     
-    background-color: rgba(26, 26, 26, 0.6);
-    background: linear-gradient(71deg, #080509, #1a171c, #080509);
-    border: 2px solid transparent;
-    border-radius: 5px;
-    color: #C0C0C0; /* Metallic gray color */
-    font-size: 2.4rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: transform 0.3s ease-out;
+    overflow: hidden; 
     opacity: 0;
-    margin-top: 5%;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(255, 255, 255, 0.2);
     animation: fadeUp 1.5s ease-in forwards;
     animation-delay: 3s;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-color: rgba(255, 255, 255, 0.3);
     font-family: 'AquireLight', sans-serif;
+    padding: 10px 20px; 
+    cursor: pointer;
 }
 
-.navigate-button:hover{
-    transform: scale(1.1);
+.navigate-button:nth-child(2){
+background-color: rgb(47, 47, 47);
+color: white;
 }
+
+
 
 .bottomButtons {
   display: flex;

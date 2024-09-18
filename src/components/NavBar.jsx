@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../css/NavBar.css';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import PushUpWord from './PushUpWord';
@@ -8,7 +8,7 @@ import SlideoverNav from './SlideoverNav';
 const NavBar = ({ menuOpen, setMenuOpen, navigateButtonRef }) => {  
   const hamburgerRef = useRef(null);
   const slideoverNavRef = useRef(null);
-
+  const [resizeTrigger, setResizeTrigger] = useState(0);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -47,6 +47,15 @@ const NavBar = ({ menuOpen, setMenuOpen, navigateButtonRef }) => {
       navigate(to);
     }
   };
+  useEffect(() => {
+    const handleResize = () => {
+      setResizeTrigger(prev => prev + 1);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <div className={'navbar-container'}>
@@ -62,6 +71,7 @@ const NavBar = ({ menuOpen, setMenuOpen, navigateButtonRef }) => {
           <div key={index} onClick={() => handleNavClick(item.to)}>
             <Link className="nav-link" to={item.to}>
               <PushUpWord
+                key={resizeTrigger}
                 word={item.title}
                 alternate={true}
                 wordClass={'nav-item'}
