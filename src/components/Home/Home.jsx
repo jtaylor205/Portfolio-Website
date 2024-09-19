@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+// Home.js
+import React, { useState, useEffect } from 'react';
 import '../../css/Home.css';
 import homeDots from './homeDots';
 import Transition from '../transition';
@@ -7,32 +8,28 @@ import resumePDF from '../../assets/resume.pdf';
 import { SiGithub } from "react-icons/si";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { BiSolidFile } from "react-icons/bi";
+import ContactModal from '../ContactModal'; // Import the ContactModal component
 
 const Home = ({ menuOpen, setMenuOpen, navigateButtonRef }) => {
+  // State to control modal visibility
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
   // Initialize homeDots and add resize listener
   useEffect(() => {
-    // Initialize homeDots
     let cleanupDots = homeDots();
 
-    // Handle window resize
     const handleResize = () => {
-      // Clean up the previous dots effect
       if (cleanupDots) cleanupDots();
-      // Reinitialize homeDots
       cleanupDots = homeDots();
     };
 
-    // Add event listener for window resize
     window.addEventListener('resize', handleResize);
 
-    // Cleanup effect
     return () => {
-      // Clean up dots effect on unmount
       if (cleanupDots) cleanupDots();
-      // Remove the resize event listener
       window.removeEventListener('resize', handleResize);
     };
-  }, []); // Empty dependency array ensures this runs once on mount
+  }, []);
 
   const linkItems = [
     { title: "LINKEDIN", link: 'https://www.linkedin.com/in/jaedon-taylor/', imgSrc: <FaLinkedinIn />, alt: "Linkedin" },
@@ -53,6 +50,11 @@ const Home = ({ menuOpen, setMenuOpen, navigateButtonRef }) => {
     }
   };
 
+  // Close modal function
+  const closeModal = () => {
+    setIsContactModalOpen(false);
+  };
+
   return (
     <div className="home-container">
       <canvas className="connecting-dots"></canvas>
@@ -71,6 +73,8 @@ const Home = ({ menuOpen, setMenuOpen, navigateButtonRef }) => {
             My work
           </p>
           <p className='navigate-button'>
+            {/* onClick={() => setIsContactModalOpen(true)}>*/} 
+            {/* Contact */}
             <a href="mailto:JaedonATaylor@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>
               Contact
             </a>
@@ -92,6 +96,9 @@ const Home = ({ menuOpen, setMenuOpen, navigateButtonRef }) => {
           </a>
         ))}
       </div>
+
+      {/* Conditionally render the ContactModal */}
+      {isContactModalOpen && <ContactModal closeModal={closeModal} />}
     </div>
   );
 };

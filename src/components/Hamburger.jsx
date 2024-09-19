@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import '../css/Hamburger.css';
 
+
 const Hamburger = ({ menuOpen, setMenuOpen, className = '' }) => {
     const [isHovering, setIsHovering] = useState(false);
 

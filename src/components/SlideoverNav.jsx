@@ -49,14 +49,14 @@ const SlideoverNav = ({ menuOpen, setMenuOpen }) => {
   };
   
     const infoHeader = document.querySelector('.info-header');
-    if (infoHeader) { // Check if the element exists
+    if (infoHeader) {
       infoHeader.addEventListener('mousemove', (e) => {
         const { width, height, left, top } = infoHeader.getBoundingClientRect();
         const x = e.clientX - left - width / 2;
         const y = e.clientY - top - height / 2;
   
-        const rotateX = (y / height) * 20;
-        const rotateY = (x / width) * -20; 
+        const rotateX = (y / height) * 35;
+        const rotateY = (x / width) * -35; 
   
         infoHeader.style.transition = 'none'; 
         infoHeader.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
