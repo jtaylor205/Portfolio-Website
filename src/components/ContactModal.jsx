@@ -67,7 +67,7 @@ const ContactModal = ({ closeModal }) => {
             <div className="container" ref={modalRef}>
                 <button className="close-button" onClick={handleClose}>×</button>
                 <form onSubmit={handleSubmit}>
-                    <p>Send Message!</p>
+                    <p>Send me a message!</p>
                     <input 
                         type="name" 
                         name="name" 
@@ -92,7 +92,6 @@ const ContactModal = ({ closeModal }) => {
                         required 
                     ></textarea><br />
                     <button type="submit">Send Message</button><br />
-                    <p>{sendingStatus}</p>
                 </form>
                 <div className="drops">
                     <div className="drop drop-1"></div>

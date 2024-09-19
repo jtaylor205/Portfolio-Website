@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.5395eb7d.css",
-    "main.js": "/static/js/main.2c622967.js",
+    "main.css": "/static/css/main.3f2349b7.css",
+    "main.js": "/static/js/main.25f522af.js",
     "static/js/453.aac68abc.chunk.js": "/static/js/453.aac68abc.chunk.js",
     "static/media/headshot.jpeg": "/static/media/headshot.1fbabbf15f604e97ef65.jpeg",
     "static/media/phoneGuru2.png": "/static/media/phoneGuru2.5b7d17abb29e0ec79e76.png",
@@ -22,12 +22,12 @@
     "static/media/AquireBold-8Ma60.otf": "/static/media/AquireBold-8Ma60.cfc5ce07bacb3e5972c3.otf",
     "static/media/AquireLight-YzE0o.otf": "/static/media/AquireLight-YzE0o.03035c58e93951e8d152.otf",
     "index.html": "/index.html",
-    "main.5395eb7d.css.map": "/static/css/main.5395eb7d.css.map",
-    "main.2c622967.js.map": "/static/js/main.2c622967.js.map",
+    "main.3f2349b7.css.map": "/static/css/main.3f2349b7.css.map",
+    "main.25f522af.js.map": "/static/js/main.25f522af.js.map",
     "453.aac68abc.chunk.js.map": "/static/js/453.aac68abc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5395eb7d.css",
-    "static/js/main.2c622967.js"
+    "static/css/main.3f2349b7.css",
+    "static/js/main.25f522af.js"
   ]
 }
