@@ -33,7 +33,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    background: rgba(0, 0, 0, 0.62); /* Semi-transparent background */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,10 +90,31 @@ body {
   form a:active {
     text-shadow: none;
   }
+
+  form button{
+    background: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    width: 40%;
+    font-size: 1rem;
+    padding: 1em;
+    margin-top: 1rem;
+    margin-bottom: 2em;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
   
   form input {
-    background: transparent;
-    width: 25vw;
+    background: rgba(0, 0, 0, 0.6);
+    width: 75%;
     padding: 1em;
     margin-bottom: 2em;
     border: none;
@@ -108,28 +129,11 @@ body {
     transition: all 0.2s ease-in-out;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   }
-
-  
-
-  
-  form input:hover {
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
-  }
   
   form input[type="email"]:focus,
   form input[type="password"]:focus{
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  form input[type="message"]{
-    height: 5vw;
-  }
-  form input[type="button"] {
-    margin-top: 10px;
-    width: 150px;
-    font-size: 1rem;
   }
   
   form input[type="button"]:hover {
@@ -143,6 +147,31 @@ body {
   form:hover {
     margin: 4px;
   }
+
+  textarea {
+    background: rgba(0, 0, 0, 0.6);
+    width: 80%;
+    height: 30%;
+    padding: 0.9em;
+    padding-top: 0.2em;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    font-size: 1rem; 
+    resize: none;
+    vertical-align: top; 
+    overflow: auto;
+    line-height: 1.5; 
+}
   
   ::placeholder {
     font-family: 'Montserrat', sans-serif;

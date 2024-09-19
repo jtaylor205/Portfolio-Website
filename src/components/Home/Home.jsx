@@ -72,12 +72,9 @@ const Home = ({ menuOpen, setMenuOpen, navigateButtonRef }) => {
           >
             My work
           </p>
-          <p className='navigate-button'>
-            {/* onClick={() => setIsContactModalOpen(true)}>*/} 
-            {/* Contact */}
-            <a href="mailto:JaedonATaylor@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>
-              Contact
-            </a>
+          <p className='navigate-button'
+            onClick={() => setIsContactModalOpen(true)}>
+            Contact
           </p>
         </div>
       </div>

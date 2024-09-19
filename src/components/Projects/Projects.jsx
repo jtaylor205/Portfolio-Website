@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import '../../css/Projects.css';
 import Transition from '../transition';
 import mineSweepeerImg1 from '../../assets/minesweeper1.png';
@@ -27,7 +27,9 @@ const preloadImage = (src) => {
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
-  const projectList = [
+
+  // Memoize projectList so it only recalculates if necessary
+  const projectList = useMemo(() => [
     {
       title: "Solace",
       type: "Mobile App / AI",
@@ -100,7 +102,7 @@ const Projects = () => {
       bio: "Implemented in C++ that allows for insertion, deletion, balancing, pre-order, in-order, and post-order traversal of nodes within the tree.",
       languages: <SiCplusplus />,
     },
-  ];
+  ], []); // Empty array means projectList will only be calculated once.
 
   useEffect(() => {
     const preloadAllImages = async () => {
@@ -111,7 +113,7 @@ const Projects = () => {
     };
 
     preloadAllImages();
-  }, []);
+  }, [projectList]); // Now projectList is memoized, preventing unnecessary re-renders.
 
   const handleCardClick = (project) => {
     setSelectedProject(project);
