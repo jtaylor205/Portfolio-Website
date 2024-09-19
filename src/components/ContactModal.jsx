@@ -69,7 +69,7 @@ const ContactModal = ({ closeModal }) => {
                 <form onSubmit={handleSubmit}>
                     <p>Send Message!</p>
                     <input 
-                        type="text" 
+                        type="name" 
                         name="name" 
                         placeholder="Name" 
                         value={formData.name} 
