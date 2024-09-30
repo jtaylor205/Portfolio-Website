@@ -9,7 +9,6 @@ const ContactModal = ({ closeModal }) => {
         email: '',
         message: '',
     });
-    const [sendingStatus, setSendingStatus] = useState('');
 
     // Use useCallback to memoize the handleClose function
     const handleClose = useCallback(() => {
@@ -47,17 +46,15 @@ const ContactModal = ({ closeModal }) => {
         e.preventDefault();
 
         // Show sending status
-        setSendingStatus('Sending...');
+      
 
         emailjs.send('service_r093z8c', 'template_9h60x6m', formData, 'h1HMCPWBJNG75eUYH')
             .then((response) => {
-                setSendingStatus('Message sent successfully!');
                 console.log('SUCCESS!', response.status, response.text);
                 setFormData({name: '', email: '', message: '' });
                 handleClose();
             })
             .catch((error) => {
-                setSendingStatus('Failed to send message. Please try again.');
                 console.log('FAILED...', error);
             });
     };

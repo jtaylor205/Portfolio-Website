@@ -65,17 +65,17 @@ const Home = ({ menuOpen, setMenuOpen, navigateButtonRef }) => {
         <div className='subHeading'>University of Florida Student</div>
         <div className='subHeading'>Computer Science</div>
         <div className='navigate-button-container'>
-          <p
+          <div
             className='navigate-button'
             onClick={() => { setMenuOpen(!menuOpen); }}
             ref={navigateButtonRef}
           >
-            My work
-          </p>
-          <p className='navigate-button'
+             <span className="button-text">My work</span>
+          </div>
+          <div className='navigate-button'
             onClick={() => setIsContactModalOpen(true)}>
-            Contact
-          </p>
+            <span className="button-text">Contact</span>
+          </div>
         </div>
       </div>
       <div className='bottomButtons'>
