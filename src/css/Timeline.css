@@ -1,0 +1,121 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+.timeline {
+  margin-top: 35px;
+  padding: 15px;
+  display: block;
+  justify-content: center;
+}
+
+.timeline-line {
+  background: rgb(228, 228, 228);
+  width: 100%; /* The line itself should take the full width */
+  height: 4px;
+  position: relative;
+  border-radius: 12px;
+}
+
+.timeline-innerline {
+  background: rgba(32, 79, 136, 0.8);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
+  width: 0%;
+  height: 4px;
+  transition: width 1s linear;
+  border-radius: 999px;
+}
+
+.point-name{
+  font-size: 1rem;
+}
+  
+.timeline-point {
+  border: none;
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(228, 228, 228);
+  width: 8px;
+  height: 8px;
+  top: 30px;
+  left: -6px;
+  transition: 1.5s ease;
+  width: 15px;
+  height: 15px;
+  top: -40px;
+  left: 40%;
+  transition: 1.5s ease;
+}
+
+ul {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+li {
+  margin-top: 30px;
+  cursor: pointer; 
+  margin-top: 0px;
+  position: relative;
+  width: 100%;
+  padding: 0px;
+}
+li p {
+  padding: 0 20px;
+  transition: 1.5s;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+li.active p {
+  opacity: 1;
+  transform: translateY(0); /* Bring the content into view */
+}
+
+.date {
+  position: absolute;
+  top: 30px;
+  left: -50px;
+  opacity: 0;
+  transition: 1.5s;
+  font-size: 12px;
+}
+
+li.active .date {
+  opacity: 1;
+}
+
+li p {
+transform: translateY(-10px);
+opacity: 0;
+transition: 1.5s;
+}
+
+li.active p {
+transform: translateY(0);
+opacity: 1;
+}
+
+.date {
+opacity: 0;
+transition: 1.5s;
+font-size: 12px;
+position: absolute;
+top: -60px;
+left: 38%;
+}
+
+li.active .timeline-point {
+  background: rgb(70, 171, 201);
+}
+
+
+
+

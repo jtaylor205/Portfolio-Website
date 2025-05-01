@@ -163,6 +163,11 @@ color: white;
         white-space: nowrap;
     }
     .bottom-button{
-      margin-right: 2rem;
+      scale: 0.8;
+    }
+    .bottomButtons{
+      gap: 0.2rem;
+      left: 0.5rem;
+      bottom:0.5rem;
     }
   }

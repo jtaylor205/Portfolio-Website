@@ -55,8 +55,8 @@ const SlideoverNav = ({ menuOpen, setMenuOpen }) => {
         const x = e.clientX - left - width / 2;
         const y = e.clientY - top - height / 2;
   
-        const rotateX = (y / height) * 35;
-        const rotateY = (x / width) * -35; 
+        const rotateX = (y / height) * 20;
+        const rotateY = (x / width) * -20; 
   
         infoHeader.style.transition = 'none'; 
         infoHeader.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;

@@ -78,7 +78,7 @@ const Home = ({ menuOpen, setMenuOpen, navigateButtonRef }) => {
           </div>
         </div>
       </div>
-      <div className='bottomButtons'>
+      <div className="fixed bottom-8 left-8 flex space-x-4">
         {linkItems.map((item, index) => (
           <a
             href={item.link}
@@ -87,7 +87,7 @@ const Home = ({ menuOpen, setMenuOpen, navigateButtonRef }) => {
             key={index}
             onClick={() => handleLinkClick(item.link, item.isDownload)}
           >
-            <div className={`bottom-button`}>
+            <div className="bg-white text-white bg-opacity-30 hover:bg-opacity-60 backdrop-blur-md w-14 h-14 rounded-full flex items-center justify-center transition-transform duration-200 hover:scale-110">
               {item.imgSrc}
             </div>
           </a>
