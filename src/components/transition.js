@@ -124,7 +124,7 @@ const Transition = (OgComponent) => {
                     top: `${index * 20}vh`,
                     left: 0,
                     width: '100%',
-                    height: '34vh',
+                    height: '20vh',
                     backgroundColor: 'gray',
                     zIndex: 1110 - index, 
                   }}
