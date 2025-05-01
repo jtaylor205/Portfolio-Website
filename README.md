@@ -1,4 +1,4 @@
-# Jaedon Taylor Portfolio
+# Portfolio Website: Jaedon Taylor
 
 A clean, modern personal portfolio website showcasing Jaedon Taylor’s skills, experience, and projects.
 
